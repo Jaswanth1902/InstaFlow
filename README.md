@@ -8,11 +8,11 @@
 [![Tech Stack](https://img.shields.io/badge/Stack-Python%203.10%2B%20%7C%20Direct%20Web%20API-blueviolet?style=flat-square)](https://github.com/Jaswanth1902/InstaFlow)
 [![Latency](https://img.shields.io/badge/Latency-%3C16ms%20Dispatch-brightgreen?style=flat-square)](https://github.com/Jaswanth1902/InstaFlow)
 [![Memory](https://img.shields.io/badge/Memory-%3C25%20MB-brightgreen?style=flat-square)](https://github.com/Jaswanth1902/InstaFlow)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](LICENSE)
 [![Security Policy](https://img.shields.io/badge/Security-Policy%20Active-brightgreen?style=flat-square)](SECURITY.md)
 
 > **Stop paying $50/month for ManyChat subscriptions and brittle cloud bot proxies.**  
-> InstaFlow brings Telegram-grade interactive agility directly into native Instagram Direct Messages—equipping creators and developers with sub-20ms slash commands, 1-second creator account discovery, automated keyword lead magnets (`CODE`, `LINK`, `NOTCH`), and autonomous reel tool harvesting with **zero cloud fees, zero external webhooks, and zero RAM bloat (<25MB)**.
+> InstaFlow brings interactive agility directly into native Instagram Direct Messages—equipping creators and developers with sub-20ms slash commands, 1-second creator account discovery, automated keyword lead magnets (`CODE`, `LINK`, `NOTCH`), and autonomous reel tool harvesting with **zero cloud fees, zero external webhooks, and zero RAM bloat (<25MB)**.
 
 <p align="center">
   <img src="assets/instaflow_demo.svg" alt="InstaFlow Interactive Direct Assistant Quickstart Demo" width="95%" />
@@ -226,4 +226,4 @@ print(f"@{creator.handle}: {creator.followers_count:,} followers | Niche: {creat
 ---
 
 ## 📄 License
-Distributed under the [MIT License](LICENSE). Copyright (c) 2026 Jaswanth Reddy.
+Distributed under the [Apache License, Version 2.0](LICENSE). Copyright (c) 2026 Jaswanth Reddy.
