@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 580" width="100%" height="100%">
+  <defs>
+    <linearGradient id="demo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="cyan-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <style>
+      .term-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 13px; fill: #94A3B8; font-weight: 500; }
+      .term-code { font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; font-size: 12px; }
+      .prompt-user { fill: #38BDF8; font-weight: 600; }
+      .bot-tag { fill: #2DD4BF; font-weight: 600; }
+      .text-white { fill: #F8FAFC; }
+      .text-gray { fill: #94A3B8; }
+      .text-green { fill: #4ADE80; }
+      .text-amber { fill: #FBBF24; }
+      .text-dim { fill: #64748B; font-size: 11px; }
+    </style>
+  </defs>
+
+  <!-- Window Drop Shadow -->
+  <rect x="25" y="25" width="1050" height="530" rx="16" fill="#000000" opacity="0.6"/>
+
+  <!-- Main Terminal Window Container -->
+  <rect x="20" y="20" width="1060" height="540" rx="14" fill="url(#demo-bg)" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Terminal Window Title Bar -->
+  <rect x="20" y="20" width="1060" height="42" rx="14" fill="#1E293B"/>
+  <rect x="20" y="48" width="1060" height="14" fill="#1E293B"/>
+  <line x1="20" y1="62" x2="1080" y2="62" stroke="#334155" stroke-width="1"/>
+
+  <!-- Traffic Light Window Controls -->
+  <circle cx="44" cy="41" r="6" fill="#EF4444"/>
+  <circle cx="64" cy="41" r="6" fill="#F59E0B"/>
+  <circle cx="84" cy="41" r="6" fill="#10B981"/>
+
+  <!-- Window Title -->
+  <text x="550" y="45" text-anchor="middle" class="term-title">⚡ InstaFlow Interactive Direct Assistant — Terminal DM Simulator</text>
+
+  <!-- Split Screen: Left Side = Terminal CLI; Right Side = Live Visual DM Thread -->
+  
+  <!-- LEFT PANEL: Terminal Commands & Execution Trace -->
+  <g transform="translate(45, 88)" class="term-code">
+    <!-- Prompt 1: Help Menu -->
+    <text x="0" y="0">
+      <tspan class="prompt-user">developer@host</tspan><tspan class="text-gray">:~$ </tspan><tspan class="text-white">instaflow --simulate</tspan>
+    </text>
+    <text x="0" y="22" class="text-dim">[*] InstaFlow v0.1.0 online | Subprocess windowless mode (0x08000000) active</text>
+    <text x="0" y="38" class="text-dim">[*] DWEL loop detection hook bound (&lt;0.5ms) | Central Blackboard WAL loaded</text>
+
+    <!-- Interactive Turn 1: Account Search -->
+    <text x="0" y="70">
+      <tspan class="prompt-user">💬 Guest DM: </tspan><tspan class="text-white">/search ai coding</tspan>
+    </text>
+    <text x="0" y="92">
+      <tspan class="bot-tag">🤖 InstaFlow </tspan><tspan class="text-dim">(18.2ms dispatch):</tspan>
+    </text>
+    <text x="18" y="112" class="text-white">🌟 Discovered Top Creator Accounts for 'ai coding':</text>
+    <text x="18" y="130" class="text-gray">• </text><tspan class="text-white">@datawarlord_official</tspan><tspan class="text-gray"> (AI Engineering &amp; LLMs)</tspan>
+    <text x="32" y="148" class="text-dim">👥 262,400 Followers | 534 Posts | 🔗 datawarlord.ai</text>
+    <text x="18" y="168" class="text-gray">• </text><tspan class="text-white">@codeyoung_global</tspan><tspan class="text-gray"> (Python &amp; Agent Workflows)</tspan>
+    <text x="32" y="186" class="text-dim">👥 142,100 Followers | 890 Posts</text>
+
+    <!-- Interactive Turn 2: ManyChat Lead Trigger -->
+    <text x="0" y="224">
+      <tspan class="prompt-user">💬 Guest DM: </tspan><tspan class="text-amber">CODE</tspan>
+    </text>
+    <text x="0" y="246">
+      <tspan class="bot-tag">🤖 InstaFlow </tspan><tspan class="text-green">[LEAD MAGNET TRIGGERED] </tspan><tspan class="text-dim">(13.8ms):</tspan>
+    </text>
+    <text x="18" y="266" class="text-white">🚀 Instant Open-Source Flagship Repositories:</text>
+    <text x="18" y="284" class="text-gray">• </text><tspan class="text-white">Notch</tspan><tspan class="text-dim"> (Dynamic Island HUD): </tspan><tspan class="prompt-user">https://github.com/Jaswanth1902/Notch</tspan>
+    <text x="18" y="302" class="text-gray">• </text><tspan class="text-white">DWEL</tspan><tspan class="text-dim"> (&lt;0.5ms Loop Guard): </tspan><tspan class="prompt-user">https://github.com/Jaswanth1902/dwel</tspan>
+    <text x="18" y="320" class="text-gray">• </text><tspan class="text-white">mem-shred</tspan><tspan class="text-dim"> (RAM Zeroizer): </tspan><tspan class="prompt-user">https://github.com/Jaswanth1902/mem-shred</tspan>
+
+    <!-- Interactive Turn 3: Reel Harvest -->
+    <text x="0" y="356">
+      <tspan class="prompt-user">💬 Guest DM: </tspan><tspan class="text-white">https://www.instagram.com/reel/C3b4X9zP123/</tspan>
+    </text>
+    <text x="0" y="378">
+      <tspan class="bot-tag">🤖 InstaFlow </tspan><tspan class="text-dim">(Autonomous OCR &amp; Extractor):</tspan>
+    </text>
+    <text x="18" y="398" class="text-green">✅ Harvested Reel Successfully! Extracted: [Cursor, V0, Omnia]</text>
+    <text x="18" y="416" class="text-dim">📦 Saved Dossier to 02_Backlog/Harvested_Resources/ &amp; Blackboard WAL</text>
+
+    <!-- Cursor -->
+    <text x="0" y="446">
+      <tspan class="prompt-user">developer@host</tspan><tspan class="text-gray">:~$ </tspan><tspan class="text-white">_</tspan>
+    </text>
+  </g>
+
+  <!-- RIGHT PANEL: Live Mobile DM Mockup Card -->
+  <g transform="translate(690, 88)">
+    <!-- Mobile Phone Frame -->
+    <rect x="0" y="0" width="340" height="430" rx="28" fill="#0A0F1D" stroke="#334155" stroke-width="2"/>
+    
+    <!-- Mobile Top Notch -->
+    <rect x="110" y="8" width="120" height="18" rx="9" fill="#020617"/>
+    <circle cx="205" cy="17" r="3.5" fill="#1E293B"/>
+
+    <!-- Direct Header -->
+    <rect x="0" y="32" width="340" height="45" fill="#0F172A"/>
+    <circle cx="35" cy="54" r="14" fill="#0284C7"/>
+    <text x="35" y="58" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">IF</text>
+    <text x="60" y="50" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="13" font-weight="600">InstaFlow Bot</text>
+    <text x="60" y="64" fill="#22C55E" font-family="'Inter', sans-serif" font-size="10">● Active now (Direct API)</text>
+
+    <!-- Mobile Bubbles -->
+    <!-- Bubble 1: Inbound user query -->
+    <g transform="translate(130, 95)">
+      <rect width="190" height="34" rx="14" fill="#2563EB"/>
+      <text x="14" y="21" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12">/search ai coding</text>
+    </g>
+
+    <!-- Bubble 2: Bot Card Response -->
+    <g transform="translate(20, 140)">
+      <rect width="250" height="96" rx="14" fill="#1E293B" stroke="#0284C7" stroke-width="1"/>
+      <text x="14" y="24" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="11" font-weight="700">🌟 TOP ACCOUNTS DISCOVERED</text>
+      <text x="14" y="44" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="12" font-weight="600">@datawarlord_official</text>
+      <text x="14" y="60" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">262k Followers • 534 Posts</text>
+      <text x="14" y="80" fill="#4ADE80" font-family="'Inter', sans-serif" font-size="10">⚡ Bio &amp; stats hydrated in 0.8s</text>
+    </g>
+
+    <!-- Bubble 3: Inbound CODE trigger -->
+    <g transform="translate(220, 250)">
+      <rect width="100" height="34" rx="14" fill="#2563EB"/>
+      <text x="16" y="21" fill="#FDE047" font-family="'Inter', sans-serif" font-size="12" font-weight="700">CODE</text>
+    </g>
+
+    <!-- Bubble 4: Bot Instant Link Response -->
+    <g transform="translate(20, 298)">
+      <rect width="260" height="80" rx="14" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+      <text x="14" y="24" fill="#4ADE80" font-family="'Inter', sans-serif" font-size="11" font-weight="700">🚀 LEAD MAGNET DISPATCHED</text>
+      <text x="14" y="44" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="11">Notch (Ambient Windows HUD)</text>
+      <text x="14" y="62" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="10">github.com/Jaswanth1902/Notch</text>
+    </g>
+
+    <!-- Input Bar -->
+    <rect x="15" y="390" width="310" height="32" rx="16" fill="#1E293B" stroke="#334155"/>
+    <text x="32" y="410" fill="#64748B" font-family="'Inter', sans-serif" font-size="11">Message...</text>
+    <circle cx="305" cy="406" r="10" fill="#0284C7"/>
+    <path d="M302 402 l8 4 l-8 4 z" fill="#FFFFFF"/>
+  </g>
+</svg>

@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <radialGradient id="vignette-flow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#141818" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#0B0E0E" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#060808" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38E1B0"/>
+      <stop offset="50%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="gold-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <style>
+      .serif-title { font-family: 'Cinzel', 'Cormorant Garamond', 'Playfair Display', 'Georgia', serif; font-weight: 400; }
+      .serif-sub { font-family: 'Cormorant Garamond', 'Baskerville', 'Georgia', serif; font-style: italic; }
+      .mono-tech { font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="420" fill="#060808"/>
+  <rect width="1200" height="420" fill="url(#vignette-flow)"/>
+
+  <!-- Da Vinci Architectural Frame -->
+  <rect x="24" y="24" width="1152" height="372" fill="none" stroke="#14B8A6" stroke-width="0.75" stroke-opacity="0.35"/>
+  <rect x="28" y="28" width="1144" height="364" fill="none" stroke="#14B8A6" stroke-width="0.5" stroke-dasharray="4,6" stroke-opacity="0.2"/>
+
+  <!-- Corner Rosettes -->
+  <g stroke="#14B8A6" stroke-width="0.8" opacity="0.6">
+    <path d="M20 24 h16 M24 20 v16"/>
+    <path d="M1180 24 h-16 M1176 20 v16"/>
+    <path d="M20 396 h16 M24 392 v16"/>
+    <path d="M1180 396 h-16 M1176 392 v16"/>
+    <circle cx="24" cy="24" r="3" fill="none"/>
+    <circle cx="1176" cy="24" r="3" fill="none"/>
+    <circle cx="24" cy="396" r="3" fill="none"/>
+    <circle cx="1176" cy="396" r="3" fill="none"/>
+  </g>
+
+  <!-- Blueprint Schematic (Left Cluster) -->
+  <g transform="translate(220, 205)" stroke="#14B8A6" fill="none">
+    <!-- Radial Harmonic Circles -->
+    <g stroke-width="0.4" stroke-opacity="0.18" stroke-dasharray="2,4">
+      <circle cx="0" cy="0" r="160"/>
+      <circle cx="0" cy="0" r="115"/>
+      <circle cx="0" cy="0" r="70"/>
+      <line x1="-180" y1="0" x2="180" y2="0"/>
+      <line x1="0" y1="-150" x2="0" y2="150"/>
+    </g>
+
+    <!-- Mobile Direct Message Capsule Schematic -->
+    <g stroke="url(#cyan-glow)" stroke-width="1.2">
+      <rect x="-115" y="-120" width="230" height="240" rx="28" fill="#0C1313" fill-opacity="0.85"/>
+      <!-- Top Speaker / Dynamic Aperture -->
+      <rect x="-30" y="-105" width="60" height="6" rx="3" fill="#14B8A6" fill-opacity="0.4"/>
+      <circle cx="45" cy="-102" r="3" fill="#38E1B0"/>
+      
+      <!-- Inbound User DM Bubble -->
+      <rect x="-95" y="-75" width="140" height="34" rx="14" fill="#1A2828" stroke="#14B8A6" stroke-width="0.8"/>
+      <text x="-85" y="-53" fill="#E2E8F0" font-size="11" class="mono-tech">/search ai tools</text>
+
+      <!-- InstaFlow Instant Response Bubble -->
+      <rect x="-45" y="-28" width="140" height="42" rx="14" fill="#0D3834" stroke="url(#cyan-glow)" stroke-width="1"/>
+      <text x="-35" y="-12" fill="#38E1B0" font-size="9" class="mono-tech">⚡ 3 Creators Found</text>
+      <text x="-35" y="4" fill="#94A3B8" font-size="8" class="mono-tech">@datawarlord (262k)</text>
+
+      <!-- Lead Magnet Auto Trigger Bubble -->
+      <rect x="-95" y="26" width="110" height="32" rx="14" fill="#1A2828" stroke="#14B8A6" stroke-width="0.8"/>
+      <text x="-85" y="46" fill="#FCD34D" font-size="11" class="mono-tech">CODE</text>
+
+      <!-- InstaFlow Instant Link Dispatch Bubble -->
+      <rect x="-45" y="68" width="140" height="38" rx="14" fill="#0D3834" stroke="url(#cyan-glow)" stroke-width="1"/>
+      <text x="-35" y="84" fill="#38E1B0" font-size="9" class="mono-tech">🚀 Jaswanth1902/Notch</text>
+      <text x="-35" y="98" fill="#94A3B8" font-size="8" class="mono-tech">&lt; 14ms dispatch</text>
+    </g>
+
+    <!-- Latency & State Telemetry Callouts -->
+    <g class="mono-tech" font-size="8" fill="#14B8A6" opacity="0.8">
+      <path d="M115 -60 h30 l15 -15" stroke="#14B8A6" stroke-width="0.7" fill="none"/>
+      <text x="165" y="-72">DIRECT WEB API [v1/direct_v2]</text>
+
+      <path d="M115 40 h30 l15 15" stroke="#14B8A6" stroke-width="0.7" fill="none"/>
+      <text x="165" y="58">DWEL ANTI-LOOP GUARD [&lt;0.5ms]</text>
+    </g>
+  </g>
+
+  <!-- Title & Typography Cluster (Right Cluster) -->
+  <g transform="translate(560, 105)">
+    <!-- Roman Class Subheading -->
+    <text x="0" y="30" fill="#14B8A6" font-size="11" letter-spacing="5" class="mono-tech">AUTONOMOUS SOCIAL INTELLIGENCE • CLASS IV</text>
+
+    <!-- Main Title -->
+    <text x="0" y="88" fill="#F8FAFC" font-size="46" letter-spacing="2" class="serif-title">I N S T A F L O W</text>
+    
+    <!-- Accent Line -->
+    <line x1="0" y1="106" x2="520" y2="106" stroke="url(#cyan-glow)" stroke-width="1.2" opacity="0.7"/>
+
+    <!-- Philosophical Statement -->
+    <text x="0" y="136" fill="#E2E8F0" font-size="16" class="serif-sub">
+      The Autonomous Instagram Direct &amp; Lead Intelligence Agent.
+    </text>
+    <text x="0" y="160" fill="#94A3B8" font-size="12" class="mono-tech">
+      Local Slash Commands • &lt;1s Creator Discovery • Zero Cloud Subscriptions
+    </text>
+
+    <!-- Telemetry Badges in Canvas -->
+    <g transform="translate(0, 190)">
+      <!-- Badge 1: Response Time -->
+      <g transform="translate(0, 0)">
+        <rect width="115" height="26" rx="4" fill="#0D2422" stroke="#14B8A6" stroke-width="0.7"/>
+        <text x="10" y="17" fill="#38E1B0" font-size="10" class="mono-tech">⚡ LATENCY &lt;16ms</text>
+      </g>
+      <!-- Badge 2: Memory -->
+      <g transform="translate(125, 0)">
+        <rect width="105" height="26" rx="4" fill="#0D2422" stroke="#14B8A6" stroke-width="0.7"/>
+        <text x="10" y="17" fill="#38E1B0" font-size="10" class="mono-tech">🧠 RAM &lt;25 MB</text>
+      </g>
+      <!-- Badge 3: Cost -->
+      <g transform="translate(240, 0)">
+        <rect width="135" height="26" rx="4" fill="#0D2422" stroke="#14B8A6" stroke-width="0.7"/>
+        <text x="10" y="17" fill="#38E1B0" font-size="10" class="mono-tech">💰 $0 CLOUD FEES</text>
+      </g>
+      <!-- Badge 4: Platform -->
+      <g transform="translate(385, 0)">
+        <rect width="125" height="26" rx="4" fill="#0D2422" stroke="#14B8A6" stroke-width="0.7"/>
+        <text x="10" y="17" fill="#38E1B0" font-size="10" class="mono-tech">🛡️ DWEL VERIFIED</text>
+      </g>
+    </g>
+
+    <!-- Bottom Hash & Signature -->
+    <g transform="translate(0, 255)" opacity="0.45" class="mono-tech" font-size="9" fill="#94A3B8">
+      <text x="0" y="0">SPEC: PEP-621 • RUNTIME: PYTHON 3.10+ • DISCOVERY: SEARCH DORKING</text>
+      <text x="0" y="14">AUTH: SESSION COOKIE • WINDOWLESS: 0x08000000 • CENTRAL DATA FABRIC</text>
+    </g>
+  </g>
+</svg>
