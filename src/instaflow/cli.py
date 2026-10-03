@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-InstaFlow Unified Command Line Interface.
-Runs interactive terminal simulations, synthetic tests, account discovery, and direct message polling.
+InstaFlow OMNI Unified Command Line Interface.
+Runs interactive terminal simulations, synthetic tests, account discovery,
+multi-vector truth verification, omnichannel repurposing, VideoDR, and ADB teleoperation.
 """
 
 from __future__ import annotations
@@ -30,34 +31,44 @@ try:
     from .engine import InstaFlowEngine
     from .poller import InstagramInboxPoller
     from .storage import StorageManager
+    from .omni_truth import OmniTruthEngine
+    from .repurposer import OmnichannelRepurposer
+    from .teleoperation import AgentReachController
+    from .videodr import VideoDRProcessor
+    from .workarounds import PlatformWorkarounds
 except ImportError:
     from config import config, InstaFlowConfig
     from discovery import AccountSearchEngine
     from engine import InstaFlowEngine
     from poller import InstagramInboxPoller
     from storage import StorageManager
+    from omni_truth import OmniTruthEngine
+    from repurposer import OmnichannelRepurposer
+    from teleoperation import AgentReachController
+    from videodr import VideoDRProcessor
+    from workarounds import PlatformWorkarounds
 
 
 def print_banner():
-    print("=" * 70)
-    print("⚡ INSTAFLOW — Autonomous Instagram Direct & Lead Intelligence Agent")
-    print("   Slash Commands • <1s Creator Discovery • $0 Cloud Subscriptions")
-    print("=" * 70)
+    print("=" * 75)
+    print("⚡ INSTAFLOW OMNI — Sovereign Social Intelligence & Physical Teleoperation")
+    print("   Multi-Vector Truth • Omnichannel Repurposer • VideoDR • /agent-reach ADB")
+    print("=" * 75)
 
 
 def cmd_simulate():
     """Interactive terminal DM simulator."""
     print_banner()
     print("[*] Starting Interactive DM Simulator (Thread: sim_thread_001, User: @developer_guest)")
-    print("[*] Commands: /help, /search <niche>, /account <handle>, /tools, CODE, or 'exit'")
-    print("-" * 70)
+    print("[*] Commands: /help, /truth <claim>, /repurpose <title>, /videodr <video>, /search <niche>, CODE, or 'exit'")
+    print("-" * 75)
 
     engine = InstaFlowEngine()
     thread_id = "sim_thread_001"
     sender_handle = "developer_guest"
 
     welcome = engine.process_incoming_message(thread_id, sender_handle, "/start")
-    print(f"\n🤖 InstaFlow:\n{welcome}\n")
+    print(f"\n🤖 InstaFlow OMNI:\n{welcome}\n")
 
     while True:
         try:
@@ -77,16 +88,16 @@ def cmd_simulate():
         latency_ms = (time.perf_counter() - t0) * 1000
 
         if reply:
-            print(f"\n🤖 InstaFlow ({latency_ms:.1f}ms):\n{reply}\n")
+            print(f"\n🤖 InstaFlow OMNI ({latency_ms:.1f}ms):\n{reply}\n")
         else:
             print("\n[InstaFlow took no action / filtered by DWEL loop guard]\n")
 
 
 def cmd_test() -> bool:
-    """Automated synthetic verification suite."""
+    """Automated synthetic verification suite including OMNI capabilities."""
     print_banner()
-    print("[*] Running Automated Interactive Capabilities Suite...")
-    print("-" * 70)
+    print("[*] Running Automated OMNI Capabilities Suite...")
+    print("-" * 75)
 
     storage = StorageManager(config.inbox_target_dir, config.db_path)
     poller = InstagramInboxPoller(config, storage, enable_interactive=True)
@@ -99,6 +110,9 @@ def cmd_test() -> bool:
         {"input": "/tools", "desc": "Tools Catalog: Harvested tools directory"},
         {"input": "/code notch", "desc": "Direct Link: Notch repository link"},
         {"input": "who are you?", "desc": "Natural Language: Bot identity intent"},
+        {"input": "/truth Agentic RAG outperforms flat search", "desc": "Omni-Truth: ArXiv & Council verification"},
+        {"input": "/repurpose Micrograd autograd engine from scratch", "desc": "Omnichannel: Multi-platform compiler"},
+        {"input": "/videodr demo_reel.mp4", "desc": "VideoDR: Frame anchor extraction"},
     ]
 
     all_passed = True
@@ -131,13 +145,150 @@ def cmd_test() -> bool:
             print(f"     Reply: [NO REPLY]")
         print()
 
-    print("=" * 70)
+    print("=" * 75)
     if all_passed:
-        print("🎉 ALL INSTAFLOW CAPABILITY TESTS PASSED!")
+        print("🎉 ALL 10 INSTAFLOW OMNI CAPABILITY TESTS PASSED!")
     else:
         print("⚠️ SOME CAPABILITY TESTS FAILED.")
-    print("=" * 70)
+    print("=" * 75)
     return all_passed
+
+
+def cmd_truth(claim: str):
+    """Multi-vector truth verification via arXiv, GitHub, and 5-Persona Council."""
+    print_banner()
+    print(f"[*] Verifying claim across multi-vector ground truth: \"{claim}\"...")
+    engine = OmniTruthEngine()
+    t0 = time.perf_counter()
+    report = engine.evaluate_claim(claim)
+    elapsed = (time.perf_counter() - t0) * 1000
+
+    print(f"[+] Multi-Vector Verification Completed in {elapsed:.1f}ms:\n")
+    print(f"• Verdict         : {report.verdict}")
+    print(f"• Council Q-Score : {report.aggregate_q_score:.2f} / 1.00")
+    arxiv_top = report.arxiv_papers[0].get("title", "None found") if report.arxiv_papers else "None found"
+    github_top = report.github_repos[0].get("name", "None found") if report.github_repos else "None found"
+    print(f"• ArXiv Match     : {arxiv_top}")
+    print(f"• GitHub Match    : {github_top}")
+    print(f"• Analysis        : {report.analysis}\n")
+    print("--- 5-Persona Council Scorecard ---")
+    for persona, score in report.council_scores.items():
+        print(f"  - {persona:<22}: {score:.2f}")
+    print("-" * 75)
+
+
+def cmd_repurpose(title: str, insight: str):
+    """Omnichannel format compiler (X, Pinterest, Reddit)."""
+    print_banner()
+    print(f"[*] Compiling omnichannel assets for: \"{title}\"...")
+    repurposer = OmnichannelRepurposer()
+    t0 = time.perf_counter()
+
+    thread = repurposer.compile_x_thread(title, insight)
+    steps = [insight[:40], "Analyze root cause", "Strip abstractions", "Benchmark telemetry", "Deploy local-first"]
+    pin = repurposer.compile_pinterest_pin(title, insight, steps)
+    reddit = repurposer.compile_reddit_case_study(
+        title=title,
+        problem=insight,
+        solution="Built minimal, zero-dependency implementation adhering to physical invariants.",
+        metrics={"Latency": "<16ms", "RAM": "<25MB", "Cloud Fees": "$0"}
+    )
+    elapsed = (time.perf_counter() - t0) * 1000
+
+    print(f"[+] Omnichannel Assets Generated in {elapsed:.1f}ms:\n")
+    print(f"𝕏 1. X (Twitter) Technical Thread ({thread.total_tweets} tweets):")
+    print(f"  Hook: {thread.hook_tweet}")
+    for i, t in enumerate(thread.body_tweets, 1):
+        print(f"  [{i}] {t}")
+    print(f"  CTA : {thread.call_to_action}")
+
+    print(f"\n📌 2. Pinterest 1000x1500 Pin:")
+    print(f"  Title       : {pin.title}")
+    print(f"  Description : {pin.description}")
+    print(f"  Template    : {pin.layout_template} ({pin.aspect_ratio})")
+
+    print(f"\n🔴 3. Reddit Retrospective Post:")
+    print(f"  Subreddit   : {reddit.subreddit}")
+    print(f"  Title       : {reddit.title}")
+    print(f"  Body Preview:\n{reddit.body_markdown[:220]}...")
+    print("-" * 75)
+
+
+def cmd_videodr(video_path: str):
+    """VideoDR Deep Research extraction."""
+    print_banner()
+    print(f"[*] Processing video through VideoDR Engine: {video_path}...")
+    processor = VideoDRProcessor()
+    t0 = time.perf_counter()
+    report = processor.process_video_file(video_path)
+    elapsed = (time.perf_counter() - t0) * 1000
+
+    print(f"[+] VideoDR Extraction Completed in {elapsed:.1f}ms:\n")
+    print(f"• Video ID        : {report.video_id}")
+    print(f"• Detected Tools  : {', '.join(report.detected_tools) or 'None'}")
+    print(f"• GitHub Repos    : {', '.join(report.github_urls) or 'None'}")
+    print(f"• Distilled Tokens: {report.distilled_tokens} tokens")
+    print(f"• Keyframes       : {len(report.keyframes)} anchors sampled")
+    print(f"• Compressed Summary:\n{report.compressed_summary}")
+    print("-" * 75)
+
+
+def cmd_workaround(platform: str, identifier: str):
+    """Resilient platform unauthenticated harvester."""
+    print_banner()
+    print(f"[*] Harvesting unauthenticated payload: {platform.upper()} for '{identifier}'...")
+    workarounds = PlatformWorkarounds()
+    t0 = time.perf_counter()
+
+    plat = platform.lower()
+    if plat in ("x", "twitter"):
+        data = workarounds.fetch_twitter_syndication(identifier)
+    elif plat == "pinterest":
+        parts = identifier.split("/")
+        user = parts[0] if parts else "pinterest"
+        board = parts[1] if len(parts) > 1 else "feed"
+        data = workarounds.fetch_pinterest_rss(user, board)
+    elif plat in ("ig", "instagram"):
+        data = workarounds.fetch_instagram_public_metadata(identifier)
+    else:
+        print(f"[!] Unknown platform: {platform}. Choose: x, twitter, pinterest, or instagram.")
+        return
+
+    elapsed = (time.perf_counter() - t0) * 1000
+    print(f"[+] Harvested in {elapsed:.1f}ms:")
+    print(f"• Type: {type(data).__name__}")
+    if isinstance(data, dict):
+        print(f"• Fields: {list(data.keys())}")
+        preview = {k: v for k, v in list(data.items())[:4]}
+        print(f"• Sample: {preview}")
+    elif isinstance(data, list):
+        print(f"• Items: {len(data)}")
+        if data:
+            print(f"• First Item: {data[0]}")
+    print("-" * 75)
+
+
+def cmd_teleop(action: str, target: str):
+    """Physical ADB teleoperation payload generation via /agent-reach."""
+    print_banner()
+    print(f"[*] Generating teleoperation payload for action '{action}' on target '{target}'...")
+    controller = AgentReachController()
+
+    act = action.lower()
+    if act == "tap":
+        cmd = controller.build_adb_touch_command(target, 540, 1200)
+    elif act == "swipe":
+        cmd = controller.build_adb_touch_command(target, 540, 1500, duration_ms=400)
+    elif act == "type":
+        cmd = controller.build_adb_type_command(target, "Hello from InstaFlow OMNI")
+    elif act == "scrape":
+        cmd = controller.build_headless_scrape_command(target, "https://instagram.com/reels", "/tmp/reels.json")
+    else:
+        cmd = [controller.reach_bin, target, "exec", "--", "echo", f"teleop: {action}"]
+
+    print(f"[+] Reach Command List: {cmd}")
+    print(f"[+] CLI Invocation    : {' '.join(cmd)}")
+    print("-" * 75)
 
 
 def cmd_search(query: str):
@@ -228,15 +379,20 @@ def cmd_status():
     print(f"Total Processed    : {stats['total_processed']}")
     for cat, count in stats.get("by_category", {}).items():
         print(f"  - {cat:<15}: {count}")
-    print("=" * 70)
+    print("=" * 75)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="InstaFlow — Autonomous Instagram Direct & Lead Intelligence Agent")
+    parser = argparse.ArgumentParser(description="InstaFlow OMNI — Sovereign Social Intelligence & Physical Teleoperation Agent")
     parser.add_argument("--simulate", action="store_true", help="Launch real-time interactive terminal DM simulation")
     parser.add_argument("--test", action="store_true", help="Run automated synthetic capability test suite")
     parser.add_argument("--search", type=str, metavar="QUERY", help="Search and discover creator accounts by niche")
     parser.add_argument("--account", type=str, metavar="HANDLE", help="Hydrate creator profile metadata and stats")
+    parser.add_argument("--truth", type=str, metavar="CLAIM", help="Verify claim across arXiv, GitHub, and 5-Persona Council")
+    parser.add_argument("--repurpose", nargs=2, metavar=("TITLE", "INSIGHT"), help="Compile insight into X thread, Pinterest SVG pin, and Reddit post")
+    parser.add_argument("--videodr", type=str, metavar="VIDEO_PATH", help="Extract visual anchors, speech transcript, and code via VideoDR")
+    parser.add_argument("--workaround", nargs=2, metavar=("PLATFORM", "ID"), help="Execute unauthenticated scraper (twitter <id>, pinterest <user/board>, instagram <url>)")
+    parser.add_argument("--teleop", nargs=2, metavar=("ACTION", "TARGET"), help="Generate AgentReach ADB command (action: tap|swipe|app, target: container/ip)")
     parser.add_argument("--once", action="store_true", help="Check inbox once and process unread items")
     parser.add_argument("--poll", action="store_true", help="Run continuous background polling daemon")
     parser.add_argument("--dry-run", action="store_true", help="Log responses without sending live HTTP requests")
@@ -248,6 +404,16 @@ def main():
     elif args.test:
         success = cmd_test()
         sys.exit(0 if success else 1)
+    elif args.truth:
+        cmd_truth(args.truth)
+    elif args.repurpose:
+        cmd_repurpose(args.repurpose[0], args.repurpose[1])
+    elif args.videodr:
+        cmd_videodr(args.videodr)
+    elif args.workaround:
+        cmd_workaround(args.workaround[0], args.workaround[1])
+    elif args.teleop:
+        cmd_teleop(args.teleop[0], args.teleop[1])
     elif args.search:
         cmd_search(args.search)
     elif args.account:

@@ -1,0 +1,18 @@
+{
+ "comp": "C:\\Users\\jaswa\\Antigravity\\01_Projects\\InstaFlow\\showcase\\hero_showcase.html",
+ "fps": 30,
+ "scale": 1,
+ "size": [
+  1280,
+  720
+ ],
+ "shutter": 0,
+ "samples": 1,
+ "workers": 2,
+ "frames": 1185,
+ "still_frames": 0,
+ "cut_frames": 0,
+ "captures": 1185,
+ "seconds": 114.9,
+ "final": false
+}

@@ -1,6 +1,7 @@
 """
 InstaFlow Conversational Engine & Command Router.
-Stateful multi-turn assistant for Instagram Direct Messages with DWEL loop prevention.
+Stateful multi-turn assistant for Instagram Direct Messages with DWEL loop prevention
+and complete InstaFlow OMNI capabilities (Truth Engine, Repurposing, VideoDR, Teleoperation).
 """
 
 from __future__ import annotations
@@ -23,8 +24,18 @@ except ImportError:
 
 try:
     from .discovery import AccountSearchEngine, InstagramAccount
+    from .omni_truth import OmniTruthEngine, TruthVerdict
+    from .teleoperation import AgentReachController
+    from .repurposer import OmnichannelRepurposer
+    from .videodr import VideoDRProcessor
+    from .workarounds import PlatformWorkarounds
 except ImportError:
     from discovery import AccountSearchEngine, InstagramAccount
+    from omni_truth import OmniTruthEngine, TruthVerdict
+    from teleoperation import AgentReachController
+    from repurposer import OmnichannelRepurposer
+    from videodr import VideoDRProcessor
+    from workarounds import PlatformWorkarounds
 
 
 @dataclass
@@ -38,7 +49,7 @@ class ConversationState:
 
 
 class InstaFlowEngine:
-    """Stateful conversational intelligence engine for Instagram Direct Messages."""
+    """Stateful conversational intelligence engine for Instagram Direct Messages with OMNI capabilities."""
 
     FLAGSHIP_LINKS = {
         "notch": "https://github.com/Jaswanth1902/Notch",
@@ -60,6 +71,11 @@ class InstaFlowEngine:
 
     def __init__(self):
         self.account_engine = AccountSearchEngine()
+        self.truth_engine = OmniTruthEngine()
+        self.reach_controller = AgentReachController()
+        self.repurposer = OmnichannelRepurposer()
+        self.videodr = VideoDRProcessor()
+        self.workarounds = PlatformWorkarounds()
         self.sessions: Dict[str, ConversationState] = {}
 
     def get_or_create_session(self, thread_id: str, sender_handle: str) -> ConversationState:
@@ -85,11 +101,11 @@ class InstaFlowEngine:
             if warning:
                 return None
 
-        # 2. Command Router (/start, /help, /search, /account, /tools, /code, /harvest)
+        # 2. Command Router (/start, /help, /search, /account, /tools, /code, /harvest, /truth, /repurpose, /videodr)
         if clean_text.startswith("/") or lower_text in ("help", "menu", "commands", "start"):
             return self._handle_command(session, clean_text)
 
-        # 3. State-Machine Context Handling (e.g. user previously prompted for niche query)
+        # 3. State-Machine Context Handling
         if session.awaiting_input_for == "search_query":
             session.awaiting_input_for = None
             return self._execute_account_search(clean_text)
@@ -116,12 +132,15 @@ class InstaFlowEngine:
 
         if raw_cmd in ("start", "help", "menu", "commands"):
             return (
-                "⚡ Hey! I'm InstaFlow, your autonomous Instagram developer assistant.\n\n"
+                "⚡ Hey! I'm InstaFlow OMNI, your autonomous social intelligence & action engine.\n\n"
                 "Available Direct Commands:\n"
                 "🔍 /search <niche> — Discover top creator accounts in <1s\n"
                 "👤 /account <handle> — Inspect creator stats, bio & links\n"
                 "🛠️ /tools — Browse curated open-source developer tools\n"
                 "📦 /code <repo> — Instant links to flagship repositories\n"
+                "⚖️ /truth <claim> — Multi-vector truth verification (arXiv + Council)\n"
+                "🧵 /repurpose <title> | <insight> — Compile to X thread & Pinterest pin\n"
+                "🎬 /videodr <transcript> — Video Deep Research anchor analysis\n"
                 "📥 Send any Reel URL to automatically extract its tools!\n\n"
                 "Type a command or keyword (e.g. 'CODE') to get started!"
             )
@@ -158,6 +177,38 @@ class InstaFlowEngine:
             if not arg:
                 return "📥 Paste an Instagram Reel URL after /harvest to extract its tools!"
             return self._execute_harvest_reel_stub(arg)
+
+        elif raw_cmd in ("truth", "verify", "claim"):
+            if not arg:
+                return "⚖️ Provide a claim to verify (e.g. '/truth speculative decoding beats draft models in production')"
+            verdict = self.truth_engine.evaluate_claim(arg)
+            papers = "\n".join([f"• {p['title'][:60]} ({p['url']})" for p in verdict.arxiv_papers[:2]])
+            return (
+                f"⚖️ OmniTruth Verdict: {verdict.verdict} (Q-Score: {verdict.aggregate_q_score})\n"
+                f"📊 Council Scores: Architect {verdict.council_scores.get('architect')} | Security {verdict.council_scores.get('security')} | Contrarian {verdict.council_scores.get('contrarian')}\n"
+                f"📚 ArXiv Evidence:\n{papers or 'None found'}"
+            )
+
+        elif raw_cmd in ("repurpose", "thread", "pin"):
+            if "|" in arg:
+                title, insight = [x.strip() for x in arg.split("|", 1)]
+            else:
+                title, insight = "Technical Blueprint", arg
+            thread = self.repurposer.compile_x_thread(title, insight)
+            return (
+                f"🧵 X Thread Compiled ({thread.total_tweets} tweets):\n\n"
+                f"Hook: {thread.hook_tweet}\n\n"
+                f"{thread.body_tweets[0]}"
+            )
+
+        elif raw_cmd in ("videodr", "anchors"):
+            report = self.videodr.process_reel("sim_reel", arg)
+            return (
+                f"🎬 VideoDR Analysis:\n"
+                f"• Detected Tools: {', '.join(report.detected_tools) or 'None'}\n"
+                f"• GitHub Repos: {', '.join(report.github_urls) or 'None'}\n"
+                f"• Distilled Tokens: {report.distilled_tokens} tokens"
+            )
 
         return f"❓ Unknown command '/{raw_cmd}'. Type /help to see available commands."
 
@@ -229,7 +280,7 @@ class InstaFlowEngine:
     def _handle_natural_language(self, session: ConversationState, text: str) -> Optional[str]:
         lower = text.lower()
         if any(w in lower for w in ("who are you", "what are you", "what is this")):
-            return "I am InstaFlow, an autonomous social intelligence agent. Type /help to see my commands!"
+            return "I am InstaFlow OMNI, an autonomous social intelligence agent. Type /help to see my commands!"
         if any(w in lower for w in ("search", "find creator", "find account")):
             session.awaiting_input_for = "search_query"
             return "🔍 Sure! What niche or topic do you want to discover accounts for?"

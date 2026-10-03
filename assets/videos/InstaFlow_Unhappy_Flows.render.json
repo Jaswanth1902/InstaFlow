@@ -1,0 +1,18 @@
+{
+ "comp": "C:\\Users\\jaswa\\Antigravity\\01_Projects\\InstaFlow\\showcase\\unhappy_flows.html",
+ "fps": 30,
+ "scale": 1,
+ "size": [
+  1280,
+  720
+ ],
+ "shutter": 0,
+ "samples": 1,
+ "workers": 2,
+ "frames": 1110,
+ "still_frames": 0,
+ "cut_frames": 0,
+ "captures": 1110,
+ "seconds": 124.6,
+ "final": false
+}

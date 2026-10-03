@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InstaFlow — Happy Flow: BitNet Local Quantization Verification & Repurposing</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: #080A0F radial-gradient(circle at 75% 30%, #12211C 0%, #07090D 80%);
+      width: 1280px;
+      height: 720px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #E9EDEF;
+      display: flex;
+    }
+
+    .studio-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    .left-cockpit {
+      width: 620px;
+      height: 100%;
+      padding: 36px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    .brand-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-pill {
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #34D399;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .voice-pill {
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #818CF8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pulsing-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 10px #10B981;
+    }
+
+    .title-h1 {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: #F8FAFC;
+    }
+
+    .subtitle-p {
+      font-size: 13px;
+      color: #94A3B8;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .phase-stepper {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .phase-step {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 7px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      transition: all 0.25s ease;
+    }
+
+    .phase-step.active {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.6);
+    }
+
+    .phase-num {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748B;
+    }
+
+    .phase-step.active .phase-num {
+      color: #34D399;
+    }
+
+    .phase-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #CBD5E1;
+    }
+
+    .telemetry-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 14px 18px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .telemetry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding-bottom: 8px;
+    }
+
+    .telemetry-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tele-status {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34D399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
+
+    .tele-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      row-gap: 7px;
+      font-size: 12px;
+    }
+
+    .metric-label {
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    .metric-value {
+      color: #F1F5F9;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .metric-value.fail { color: #EF4444; font-weight: 700; }
+    .metric-value.warn { color: #F59E0B; }
+    .metric-value.pass { color: #10B981; }
+
+    .scenario-box {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .scenario-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #F1F5F9;
+    }
+
+    .scenario-desc {
+      font-size: 11.5px;
+      color: #94A3B8;
+      line-height: 1.45;
+    }
+
+    .caption-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .caption-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 8px 14px;
+    }
+
+    .voice-avatar {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #10B981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: bold;
+      color: #064E3B;
+      flex-shrink: 0;
+    }
+
+    .caption-text {
+      font-size: 11.5px;
+      color: #E2E8F0;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #10B981, #38BDF8);
+      transition: width 0.05s linear;
+    }
+
+    /* RIGHT COCKPIT */
+    .right-cockpit {
+      width: 660px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 28px;
+      position: relative;
+    }
+
+    .card-deck {
+      width: 500px;
+      background: #0F172A;
+      border-radius: 24px;
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(16, 185, 129, 0.15);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .deck-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 12px;
+    }
+
+    .deck-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #F8FAFC;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .deck-status {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: #064E3B;
+      color: #34D399;
+    }
+
+    .deck-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .content-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .content-title {
+      font-weight: 700;
+      color: #CBD5E1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="studio-bg"></div>
+
+  <!-- LEFT COCKPIT -->
+  <div class="left-cockpit">
+    <div class="brand-group">
+      <div class="badge-row">
+        <div class="badge-pill" id="headerBadge">
+          <div class="pulsing-dot" id="headerDot"></div>
+          <span id="headerBadgeText">AUTONOMOUS HAPPY FLOW</span>
+        </div>
+        <div class="voice-pill">
+          <span>🎙️ Gnani Timbre (Kartik en-IN)</span>
+        </div>
+      </div>
+      <h1 class="title-h1" id="mainTitle">BitNet Quantization Reel Pipeline</h1>
+      <p class="subtitle-p" id="subTitle">Full verification lifecycle: VideoDR intake, live arXiv overlap, and carousel generation</p>
+
+      <div class="phase-stepper">
+        <div class="phase-step active" id="step1">
+          <span class="phase-num">01 · Ingress</span>
+          <span class="phase-label">VideoDR Extract</span>
+        </div>
+        <div class="phase-step" id="step2">
+          <span class="phase-num">02 · Grounding</span>
+          <span class="phase-label">arXiv & GitHub</span>
+        </div>
+        <div class="phase-step" id="step3">
+          <span class="phase-num">03 · Output</span>
+          <span class="phase-label">SVG & Teleoperation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TELEMETRY HUD -->
+    <div class="telemetry-card">
+      <div class="telemetry-header">
+        <div class="telemetry-title">
+          <span>⚡ Live Session Telemetry</span>
+        </div>
+        <div class="tele-status" id="teleGate">SYS_INTAKE_OK</div>
+      </div>
+      <div class="tele-grid">
+        <span class="metric-label">Reel Under Inspection</span>
+        <span class="metric-value" id="teleMetric1">BitNet b1.58 Showcase</span>
+
+        <span class="metric-label">VideoDR Container Probe</span>
+        <span class="metric-value pass" id="teleMetric2">MP4 Box Valid (<400 tok)</span>
+
+        <span class="metric-label">Live arXiv Overlap</span>
+        <span class="metric-value pass" id="teleMetric3">94.2% Lexical Overlap</span>
+
+        <span class="metric-label">GitHub Repository</span>
+        <span class="metric-value pass" id="teleMetric4">microsoft/BitNet (Verified)</span>
+
+        <span class="metric-label">Repurposer Pipeline</span>
+        <span class="metric-value pass" id="teleMetric5">5-SLIDE SVG GENERATED</span>
+      </div>
+    </div>
+
+    <!-- SCENARIO BOX -->
+    <div class="scenario-box">
+      <div class="scenario-header" id="scenarioHeader">
+        <span>📍</span>
+        <span id="scenarioName">1. What This Case Is: BitNet Reel Ingress</span>
+      </div>
+      <p class="scenario-desc" id="scenarioDesc">
+        A developer saves a viral reel claiming 1-bit LLM quantization achieves full 16-bit performance. VideoDR probes container metadata and ingests the audio transcript.
+      </p>
+    </div>
+
+    <!-- CAPTION & PROGRESS -->
+    <div class="caption-footer">
+      <div class="caption-bar">
+        <div class="voice-avatar">K</div>
+        <div class="caption-text" id="captionText">
+          In this happy flow, a developer bookmarks a viral Instagram reel demonstrating a breakthrough BitNet quantization algorithm.
+        </div>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progFill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT COCKPIT -->
+  <div class="right-cockpit">
+    <div class="card-deck">
+      <div class="deck-header">
+        <div class="deck-title">
+          <span>📱 InstaFlow Verification Studio</span>
+        </div>
+        <div class="deck-status" id="deckStatus">VERIFIED FLOW</div>
+      </div>
+
+      <div class="deck-body" id="deckBody">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const headerBadgeText = document.getElementById("headerBadgeText");
+    const headerDot = document.getElementById("headerDot");
+    const mainTitle = document.getElementById("mainTitle");
+    const subTitle = document.getElementById("subTitle");
+
+    const step1 = document.getElementById("step1");
+    const step2 = document.getElementById("step2");
+    const step3 = document.getElementById("step3");
+
+    const teleGate = document.getElementById("teleGate");
+    const teleMetric1 = document.getElementById("teleMetric1");
+    const teleMetric2 = document.getElementById("teleMetric2");
+    const teleMetric3 = document.getElementById("teleMetric3");
+    const teleMetric4 = document.getElementById("teleMetric4");
+    const teleMetric5 = document.getElementById("teleMetric5");
+
+    const scenarioName = document.getElementById("scenarioName");
+    const scenarioDesc = document.getElementById("scenarioDesc");
+    const captionText = document.getElementById("captionText");
+    const progFill = document.getElementById("progFill");
+    const deckBody = document.getElementById("deckBody");
+
+    const PHASES = {
+      phase1: {
+        badgeText: "REEL INGRESS: VIDEODR PROBING",
+        dotColor: "#3B82F6",
+        title: "BitNet 1.58-Bit Quantization Reel",
+        subtitle: "VideoDR container inspection, sidecar transcript ingestion, and token clamping.",
+        stepActive: 1,
+        gateText: "CONTAINER_PROBED_OK",
+        m1: "BitNet b1.58 Showcase", m1Class: "metric-value",
+        m2: "MP4 Box Valid (<400 tok)", m2Class: "metric-value pass",
+        m3: "Connecting to arXiv...", m3Class: "metric-value warn",
+        m4: "Awaiting GitHub Probe...", m4Class: "metric-value warn",
+        m5: "Zero-Trust Standby", m5Class: "metric-value pass",
+        scName: "1. What This Case Is: BitNet Reel Ingress",
+        scDesc: "VideoDR inspects the video container, extracts technical claims regarding 1-bit quantization and matrix multiplication, and prepares tokens for academic grounding.",
+        caption: "In this happy flow, a developer bookmarks a viral Instagram reel demonstrating a breakthrough BitNet quantization algorithm. InstaFlow immediately extracts video container metadata and audio transcripts via VideoDR.",
+        bodyHtml: `
+          <div class="content-box" style="border-color: rgba(59, 130, 246, 0.4);">
+            <div class="content-title">
+              <span style="color:#60A5FA;">🎬 VideoDR Ingress Probe</span>
+              <span style="color:#3B82F6; font-weight:800;">PROBE SUCCESS</span>
+            </div>
+            <span>• Video Container: <b>H.264 / AAC MP4</b> (1080x1920 @ 30fps)</span>
+            <span>• Extracted Claim: <i>"BitNet 1.58-bit ternary weights {-1, 0, 1} match full FP16 LLM perplexity with 71x energy reduction"</i></span>
+            <span>• Token Clamping: 218 tokens processed (Layer 0 Law 7 compliant)</span>
+          </div>
+        `
+      },
+      phase2: {
+        badgeText: "OMNI TRUTH GROUNDING: 94.2% OVERLAP",
+        dotColor: "#10B981",
+        title: "Live arXiv Atom Grounding & GitHub Index",
+        subtitle: "Matching ternary weight tokens against official preprint; validating microsoft/BitNet repo.",
+        stepActive: 2,
+        gateText: "GROUND_TRUTH_CONFIRMED",
+        m1: "BitNet b1.58 Architecture", m1Class: "metric-value",
+        m2: "arXiv:2402.17764 Confirmed", m2Class: "metric-value pass",
+        m3: "94.2% Lexical Overlap", m3Class: "metric-value pass",
+        m4: "microsoft/BitNet (4.8k ⭐)", m4Class: "metric-value pass",
+        m5: "Council Score: 0.94 / 1.00", m5Class: "metric-value pass",
+        scName: "2. How We Detect This: Live Academic & Code Grounding",
+        scDesc: "OMNI-Truth verifies the claim against arXiv:2402.17764 (The Era of 1-bit LLMs). Lexical overlap score reaches 94.2%, and live GitHub API search confirms 4.8k stars on the official repo.",
+        caption: "Next, our OMNI-Truth engine queries the live arXiv API, matching key tokens like ternary weights and matrix multiplication with a ninety-four percent lexical confidence score, while GitHub Search API validates the repository.",
+        bodyHtml: `
+          <div class="content-box" style="border-color: rgba(16, 185, 129, 0.4);">
+            <div class="content-title">
+              <span style="color:#34D399;">🔬 Live arXiv Verification: 94.2% Overlap</span>
+              <span style="color:#10B981; font-weight:800;">VERIFIED</span>
+            </div>
+            <span>• arXiv Paper: <b>The Era of 1-bit LLMs (arXiv:2402.17764)</b></span>
+            <span>• Lexical Match: <b>94.2%</b> (Ternary weights, matrix multiplication)</span>
+            <span>• GitHub Repo: <b>microsoft/BitNet</b> (Stars: 4,812 • Verified)</span>
+            <span>• 5-Persona Council Score: <b>0.94 / 1.00 (Pass)</b></span>
+          </div>
+        `
+      },
+      phase3: {
+        badgeText: "REPURPOSER & KINETIC TELEOPERATION",
+        dotColor: "#38BDF8",
+        title: "5-Slide Carousel SVG & Teleoperation",
+        subtitle: "Autonomous SVG generation, executive briefs, and Gaussian touch jitter teleoperation.",
+        stepActive: 3,
+        gateText: "CAROUSEL_PUBLISHED",
+        m1: "BitNet 1.58b Verified", m1Class: "metric-value",
+        m2: "1000x1500 SVG Generated", m2Class: "metric-value pass",
+        m3: "Markdown Brief Minted", m3Class: "metric-value pass",
+        m4: "Dwell Time: 115ms (Jitter)", m4Class: "metric-value pass",
+        m5: "DISPATCHED ACROSS PLATFORMS", m5Class: "metric-value pass",
+        scName: "3. How We Resolve This: Multi-Format Autonomous Output",
+        scDesc: "InstaFlow converts verified technical knowledge into a 5-slide 1000x1500 carousel SVG, writes a technical brief, and queues cross-platform posting with human-like Gaussian touch jitter.",
+        caption: "With truth mathematically established, InstaFlow's repurposer generates a publication-ready five-slide carousel SVG, creates an executive technical brief, and queues cross-platform teleoperation with human-like Gaussian touch jitter.",
+        bodyHtml: `
+          <div class="content-box" style="border-color: rgba(56, 189, 248, 0.4);">
+            <div class="content-title">
+              <span style="color:#38BDF8;">📊 Publication-Ready 1000x1500 Carousel SVG</span>
+              <span style="color:#38BDF8; font-weight:800;">READY</span>
+            </div>
+            <span>• Slide 1: <b>The Death of FP16 (The Problem)</b></span>
+            <span>• Slide 2: <b>Ternary Math {-1, 0, 1} (The Mechanism)</b></span>
+            <span>• Slide 3: <b>71x Energy Reduction (The Benchmark)</b></span>
+            <span>• Slide 4: <b>microsoft/BitNet Code Walkthrough</b></span>
+            <span>• Teleoperation: <b>Queued with 115ms Box-Muller Gaussian Jitter</b></span>
+          </div>
+        `
+      }
+    };
+
+    let curPhase = null;
+    function setPhase(key) {
+      if (curPhase === key) return;
+      curPhase = key;
+      const s = PHASES[key];
+
+      headerBadgeText.innerText = s.badgeText;
+      headerDot.style.background = s.dotColor;
+      headerDot.style.boxShadow = `0 0 10px ${s.dotColor}`;
+
+      mainTitle.innerText = s.title;
+      subTitle.innerText = s.subtitle;
+
+      step1.className = "phase-step " + (s.stepActive === 1 ? "active" : "");
+      step2.className = "phase-step " + (s.stepActive === 2 ? "active" : "");
+      step3.className = "phase-step " + (s.stepActive === 3 ? "active" : "");
+
+      teleGate.innerText = s.gateText;
+      teleMetric1.innerText = s.m1; teleMetric1.className = s.m1Class;
+      teleMetric2.innerText = s.m2; teleMetric2.className = s.m2Class;
+      teleMetric3.innerText = s.m3; teleMetric3.className = s.m3Class;
+      teleMetric4.innerText = s.m4; teleMetric4.className = s.m4Class;
+      teleMetric5.innerText = s.m5; teleMetric5.className = s.m5Class;
+
+      scenarioName.innerText = s.scName;
+      scenarioDesc.innerText = s.scDesc;
+      captionText.innerText = s.caption;
+      deckBody.innerHTML = s.bodyHtml;
+    }
+
+    // onetake Contract (37.5s duration, 30 fps, 1280x720)
+    window.__meta = { dur: 37.5, fps: 30, w: 1280, h: 720 };
+    window.__ready = true;
+
+    window.__seek = async function(t) {
+      const pct = Math.min(100, Math.max(0, (t / 37.5) * 100));
+      progFill.style.width = pct + "%";
+
+      if (t < 11.5) {
+        setPhase("phase1");
+      } else if (t < 25.0) {
+        setPhase("phase2");
+      } else {
+        setPhase("phase3");
+      }
+      return Promise.resolve();
+    };
+  </script>
+</body>
+</html>

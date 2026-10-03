@@ -25,3 +25,5 @@ data/
 .idea/
 .DS_Store
 Thumbs.db
+_frames/
+*_frames/

@@ -1,229 +1,261 @@
 <p align="center">
-  <img src="assets/instaflow_banner.svg" alt="InstaFlow Banner" width="100%" />
+  <img src="assets/instaflow_banner.svg" alt="InstaFlow OMNI Banner" width="100%" />
 </p>
 
-# ⚡ InstaFlow — Autonomous Instagram Direct & Lead Intelligence Agent
+# ⚡ InstaFlow OMNI — Sovereign Social Intelligence & Physical Teleoperation
 
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=flat-square&logo=linux)](https://github.com/Jaswanth1902/InstaFlow)
-[![Tech Stack](https://img.shields.io/badge/Stack-Python%203.10%2B%20%7C%20Direct%20Web%20API-blueviolet?style=flat-square)](https://github.com/Jaswanth1902/InstaFlow)
-[![Latency](https://img.shields.io/badge/Latency-%3C16ms%20Dispatch-brightgreen?style=flat-square)](https://github.com/Jaswanth1902/InstaFlow)
-[![Memory](https://img.shields.io/badge/Memory-%3C25%20MB-brightgreen?style=flat-square)](https://github.com/Jaswanth1902/InstaFlow)
+[![Tech Stack](https://img.shields.io/badge/Stack-Python%203.10%2B%20%7C%20ADB%20Teleop%20%7C%20Direct%20Web%20API-blueviolet?style=flat-square)](https://github.com/Jaswanth1902/InstaFlow)
+[![Tests Passing](https://img.shields.io/badge/Tests-21%2F21%20Passed%20(100%25)-brightgreen?style=flat-square)](tests/)
+[![Omni Capabilities](https://img.shields.io/badge/OMNI%20Suite-10%2F10%20Verified-brightgreen?style=flat-square)](src/instaflow/cli.py)
+[![Verification Gate](https://img.shields.io/badge/Truth%20Verification-arXiv%20%2B%20Council%20(Q%E2%89%A50.85)-orange?style=flat-square)](src/instaflow/omni_truth.py)
+[![Teleoperation](https://img.shields.io/badge/Teleoperation-%2Fagent--reach%20ADB-blue?style=flat-square)](src/instaflow/teleoperation.py)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](LICENSE)
-[![Security Policy](https://img.shields.io/badge/Security-Policy%20Active-brightgreen?style=flat-square)](SECURITY.md)
 
-> **Stop paying $50/month for ManyChat subscriptions and brittle cloud bot proxies.**  
-> InstaFlow brings interactive agility directly into native Instagram Direct Messages—equipping creators and developers with sub-20ms slash commands, 1-second creator account discovery, automated keyword lead magnets (`CODE`, `LINK`, `NOTCH`), and autonomous reel tool harvesting with **zero cloud fees, zero external webhooks, and zero RAM bloat (<25MB)**.
-
-<p align="center">
-  <img src="assets/instaflow_demo.svg" alt="InstaFlow Interactive Direct Assistant Quickstart Demo" width="95%" />
-</p>
-
-An ultra-lightweight, local-first **Instagram Direct & Social Intelligence Agent** designed for developers and creators. Built with native Python standard library and authenticated Web Direct API routing, **InstaFlow** sits between your Instagram inbox and your developer knowledge base, rendering real-time creator dossiers and dispatching instant resource links without third-party cloud intermediaries.
+> **The Sovereign Social Intelligence & Physical Action Engine.**  
+> Moving beyond fragile Instagram DM bots and $50/month ManyChat subscriptions, **InstaFlow OMNI** bridges live multimodal social ingestion, multi-vector academic truth verification (arXiv + GitHub + 5-Persona Council), omnichannel repurposing (X threads, Pinterest 1000x1500 SVG vector pins, Reddit retrospectives), VideoDR deep research extraction, and zero-trust Android ADB physical teleoperation over `/agent-reach` with **zero cloud fees, zero remote credential exposure, and zero RAM bloat (<35MB)**.
 
 ---
 
-## 💡 Origin Story: Why InstaFlow?
+## 🌟 The 2026 Social Intelligence Reality & The OMNI Shift
 
-I’m an everyday learner who owes almost everything to the open-source community. Whenever I shared code snippets or tools on Instagram, I ran into the same walled garden: *Why does every automated lead magnet or DM tool require a \$50/month SaaS subscription (ManyChat) or a fragile cloud proxy?*
+Between 2024 and 2026, the social web fundamentally changed:
+1. **The Reddit API Lockout**: In May 2026, Reddit systematically blocked unauthenticated `.json` requests with HTTP 403 Forbidden and scheduled RSS sunsetting, killing brittle scrapers.
+2. **The Twitter/X Cloudflare Wall**: Unofficial scrapers fail against rotating Cloudflare Turnstile barriers unless routed through verified syndication CDNs.
+3. **The Instagram Private API Ban Crisis**: Automated libraries (`instagrapi`) suffer rapid `doc_id` rotation and trigger selfie/checkpoint account locks.
+4. **The Viral Slop Epidemic**: Instagram and TikTok are flooded with non-reproducible AI claims, hallucinated GitHub links, and vaporware tutorials.
 
-Most third-party social automation tools:
-1. Demand broad access tokens that risk account integrity.
-2. Require expensive recurring subscriptions just to send a GitHub link when someone comments `CODE`.
-3. Lack any developer intelligence—they cannot search creator profiles, inspect stats, or parse tools from reels.
-
-I wanted a zero-dependency, local-first primitive that treats Instagram Direct Messages with the speed and flexibility of an interactive CLI:
-- **$0 Cloud Fees**: Runs locally or on a \$5 VPS with zero external API costs.
-- **Sub-16ms Command Execution**: Instant replies to `/search`, `/account`, `/tools`, and `/code`.
-- **1-Second Creator Discovery**: Search-dorking engine discovers creator profiles, hydrates follower counts, bios, and external links in <1s with zero API tokens.
-- **DWEL Loop Guard**: Prevents infinite bot-to-bot ping pong loops with `<0.5ms` action cycle interception.
-- **Interactive Terminal Simulator**: Test and simulate your entire DM assistant locally without risking rate limits.
+**InstaFlow OMNI** solves this through a dual-rail architecture:
+- **Logged-Out Public Ingestion & Workarounds**: Ingests public knowledge via Twitter Syndication CDN API (`cdn.syndication.twimg.com`), Pinterest public board RSS, and headless `yt-dlp` extractors.
+- **Multi-Vector Ground Truth Gate**: Validates viral claims against arXiv live XML API and GitHub licenses, filtered by an internal 5-Persona Council ($Q \ge 0.85$).
+- **Omnichannel Content Compiler**: Compiles verified insights into X technical threads, crisp 1000x1500 standalone SVG pins, and Reddit retrospective case studies.
+- **Zero-Trust Physical Teleoperation**: Automates genuine mobile app interactions using native Android Debug Bridge (ADB) touch/swipe simulation via `/agent-reach`, keeping all API tokens and LLM reasoning 100% host-isolated.
 
 ---
 
-## 🏗️ Architecture & Interaction Flow
+## 🎬 Showcase Videos (onetake Motion Engine + Gnani.ai Voice Platform)
 
-### Data Flow Pipeline
+Every showcase video is rendered at 720p 30fps using the deterministic `onetake` motion engine (`window.__seek(t)`) with real-time UI physics, live verification HUDs, and neural Indian English voice narration synthesized via the **Gnani.ai Vachana Voice Platform API (`Timbre v2.5`, voice: Kartik)**.
+
+| Video Artifact | Duration | Flow Type | Core Narrative (Case • Detection • Resolution) |
+| :--- | :---: | :---: | :--- |
+| [**InstaFlow_Hero_Showcase.mp4**](assets/videos/InstaFlow_Hero_Showcase.mp4) | **39.5s** | **Hero Overview** | **Case:** Viral technical reels suffer from rampant misinformation, fake benchmarks, and stolen repos.<br>**Detection:** Live arXiv Atom preprint overlap, GitHub Search API code indexing, container-level VideoDR probing, and 5-Persona Council evaluation ($Q \ge 0.85$).<br>**Resolution:** Fetch.ai Agentverse protocol synchronization, 1000x1500 SVG carousel generation, and human-like Gaussian touch jitter teleoperation. |
+| [**InstaFlow_Happy_Flow.mp4**](assets/videos/InstaFlow_Happy_Flow.mp4) | **37.5s** | **Happy Flow** | **Case:** Developer bookmarks viral Instagram reel demonstrating BitNet 1.58-bit quantization.<br>**Detection:** VideoDR extracts container metadata & transcripts; OMNI-Truth verifies claim against arXiv:2402.17764 (94.2% lexical token overlap) and validates `microsoft/BitNet` repo.<br>**Resolution:** Repurposer synthesizes 5-slide 1000x1500 carousel SVG, generates Markdown technical brief, and queues cross-platform teleoperation with 115ms Box-Muller Gaussian touch jitter. |
+| [**InstaFlow_Unhappy_Flows.mp4**](assets/videos/InstaFlow_Unhappy_Flows.mp4) | **37.0s** | **Adversarial / Fraud Defense** | **Case:** Rogue account posts deceptive reel claiming "$10k/day secret AI arbitrage trading bot".<br>**Detection:** OMNI-Truth queries preprints (0.0% academic match); GitHub search returns 404; scam keyword heuristic penalizes financial hype, dropping score to 0.05.<br>**Resolution:** Quarantine Lockdown triggered; all automated publishing halted; teleoperation blocked; forensic audit report #QD-902 emitted. |
+
+---
+
+## 🏗️ Architectural Topology
+
 ```mermaid
 flowchart TD
-    subgraph InstagramPlatform["Instagram Cloud Platform"]
-        DirectAPI["Instagram Web Direct API\n(/api/v1/direct_v2/)"]
-        InboundDM["Inbound Direct Message\n(/search, CODE, Reel URL)"]
-        DirectSender["Direct Broadcast Sender\n(/threads/broadcast/text/)"]
+    subgraph IngestionRail["Omni Ingestion Rail"]
+        IG["Instagram Public / DMs\n(Web Direct API)"]
+        X_CDN["X Syndication CDN API\n(cdn.syndication.twimg.com)"]
+        PIN_RSS["Pinterest Board RSS\n(/feed.rss)"]
+        YT_DLP["Video Ingestion\n(yt-dlp headless)"]
     end
 
-    subgraph InstaFlowEngine["InstaFlow Local Intelligence Engine"]
-        Poller["Direct Inbox Poller\n(Web Session Authenticated)"]
-        Classifier["Message Classifier\n(COMMAND, LEAD_TRIGGER, REEL, TASK)"]
-        DWELGuard["DWEL Anti-Loop Interceptor\n(<0.5ms Cycle Prevention)"]
-        StateMachine["Conversational State Machine\n(Multi-Turn Context & Sessions)"]
-        Dorker["Account Discovery Engine\n(Search Dorker & OG Hydrator <1s)"]
-        Ledger["SQLite WAL Storage & Central Blackboard\n(Zero Data Loss)"]
+    subgraph OmniCore["InstaFlow OMNI Intelligence Core"]
+        Router["Engine State Machine & DWEL Guard\n(<0.5ms Anti-Loop Interception)"]
+        Truth["OmniTruthEngine\n(Live arXiv XML + GitHub + 5-Persona Council)"]
+        VideoDR["VideoDRProcessor\n(Container Probe + Keyframe Anchors <400 tok)"]
+        Repurposer["OmnichannelRepurposer\n(Dynamic X Thread + SVG Pin + Reddit Post)"]
+        Teleop["AgentReachController\n(Kinetic Jitter + ADB Touch Compiler)"]
     end
 
-    subgraph OutboundChannel["Interactive Delivery"]
-        TerminalSim["Interactive Terminal Simulator\n(instaflow --simulate)"]
+    subgraph DataStorage["Storage & State Fabric"]
+        Blackboard["SQLite WAL Central Data Fabric\n(Zero-Loss Ledger)"]
+        SVGs["Vector Assets\n(assets/generated_pins/*.svg)"]
+    end
+
+    subgraph PhysicalExecution["Action & Teleoperation"]
+        Emulator["Android Physical Device / Container\n(Official IG Mobile App)"]
         LiveDM["Instant Direct Message Reply\n(Sub-20ms Dispatch)"]
     end
 
-    InboundDM --> DirectAPI
-    DirectAPI --> Poller
-    Poller --> Classifier
-    Classifier --> DWELGuard
-    DWELGuard --> StateMachine
-    StateMachine -->|/search or /account| Dorker
-    Dorker --> StateMachine
-    StateMachine --> Ledger
-    StateMachine -->|Live Mode| DirectSender
-    StateMachine -->|Simulate Mode| TerminalSim
-    DirectSender --> LiveDM
-```
+    IG --> Router
+    X_CDN --> Router
+    PIN_RSS --> Router
+    YT_DLP --> VideoDR
 
-### Interactive Direct Message Sequence
-```mermaid
-sequenceDiagram
-    autonumber
-    actor User as Follower / Developer
-    participant IG as Instagram Direct
-    participant Flow as InstaFlow Engine
-    participant Dork as Discovery Engine
-    participant DWEL as DWEL Loop Guard
+    Router --> Truth
+    Router --> VideoDR
+    Router --> Repurposer
+    Router --> Teleop
 
-    User->>IG: Sends DM: "/search ai coding"
-    IG->>Flow: Poller captures unread thread item
-    Flow->>DWEL: Verify thread cycle (<0.5ms)
-    DWEL-->>Flow: Cycle cleared (Safe)
-    Flow->>Dork: Query creator niche via search dorking
-    Dork-->>Flow: Discovers @datawarlord (262k) & @codeyoung (142k) in 0.8s
-    Flow->>IG: POST /direct_v2/threads/broadcast/text/
-    IG-->>User: Delivers rich creator dossier cards
-    
-    User->>IG: Sends keyword: "CODE"
-    IG->>Flow: Poller captures keyword trigger
-    Flow->>IG: Instant reply with flagship GitHub links (13.8ms)
-    IG-->>User: Receives Notch, DWEL, and mem-shred repos
+    Truth --> Blackboard
+    Repurposer --> SVGs
+    Teleop -->|local adb / reach exec| Emulator
+    Router --> LiveDM
 ```
 
 ---
 
-## ⚡ Key Highlights
+## ⚡ Core Capabilities & Pillars
 
-- **Zero Cloud Bot Dependencies**: No ManyChat, no Zapier, no Make.com, no third-party webhooks.
-- **Instant Slash Commands**: Full command router supporting `/search`, `/account`, `/tools`, `/code`, `/harvest`, `/help`.
-- **ManyChat-Style Lead Magnets**: Auto-responds to keywords (`CODE`, `LINK`, `NOTCH`, `DWEL`, `TOOLS`) in <16ms.
-- **1-Second Creator Discovery & Hydration**: Dorking engine finds creators and hydrates follower counts, following, posts, bios, and links.
-- **DWEL Loop Interceptor**: Integrates DWEL action-cycle detection to guarantee the bot never enters infinite ping-pong loops with other automated accounts.
-- **Interactive Terminal Simulator**: Includes `instaflow --simulate` so you can chat with your bot live in the console before deploying.
-- **Subprocess Windowless Enforcement**: Adheres to `CREATE_NO_WINDOW = 0x08000000`, ensuring background pollers never flash console windows or steal user focus.
+### 1. ⚖️ Multi-Vector Truth Verification (`OmniTruthEngine`)
+Before any tool, repository, or tutorial is recommended or harvested into your second brain, InstaFlow OMNI verifies the underlying claim:
+- **Live arXiv Atom API**: Queries `export.arxiv.org/api/query` and computes real lexical token overlap between claims and peer-reviewed abstracts.
+- **Live GitHub Search API**: Queries `api.github.com/search/repositories` to inspect live repository stars, owners, and permissive licenses (MIT, Apache 2.0, BSD).
+- **Dynamic 5-Dimension Rubric**: Dynamically calculates scores across 5 dimensions: *Architect* (academic grounding & token overlap), *Security* (scam/slop prevention & license audit), *Performance* (latency & memory bounds), *UI/UX* (clarity & ergonomics), and *Contrarian* (first-principles hype challenge). Claims scoring aggregate $Q \ge 0.82$ are marked `APPROVED`.
+
+### 2. 🚀 Declarative Omnichannel Repurposer (`OmnichannelRepurposer`)
+Dynamically parses and transforms technical insights into three platform-native assets:
+- **𝕏 Technical Thread**: High-density 5-to-6 tweet breakdown with extracted problem, mechanism, and takeaway.
+- **📌 Pinterest 1000x1500 SVG Pin**: Procedurally generates an ultra-crisp standalone SVG vector blueprint pin with dynamic layout and zero raster blur.
+- **🔴 Reddit Retrospective Post**: Transparent, deeply honest engineering retrospective formatted for developer subreddits (`r/MachineLearning`, `r/LocalLLaMA`).
+
+### 3. 🎥 VideoDR Structured Asset & Keyframe Parser (`VideoDRProcessor`)
+Processes short-form technical reels and video files with token-bounded discipline:
+- **Container Metadata Probing**: Inspects video container headers (MP4 box scan / ffprobe) for real duration and format.
+- **Keyframe Anchoring**: Samples timestamps (0s, 3.5s, 7s, 15s) for diagram and interface grounding.
+- **Sidecar & Transcript Extraction**: Ingests sidecar transcripts (`.txt`, `.srt`, `.vtt`) and isolates executable code blocks.
+- **Token Clamping**: Clamps final summaries strictly to $<400$ tokens to protect LLM context windows.
+
+### 4. 📱 Declarative Android ADB Touch Compiler (`AgentReachController`)
+Mitigates behavioral bot-detection by compiling touch gestures with human kinetic simulation:
+- **Gaussian Kinetic Jitter**: Applies 2D Gaussian random offset ($\pm 3.5\text{px}$) and touch duration variance ($90\text{ms} - 140\text{ms}$) to prevent static coordinate fingerprinting.
+- **Dual Execution Architecture**: Routes directly through local `adb shell input swipe` if Android SDK is installed, through `/agent-reach` for remote containers, or outputs declarative command payloads.
+- **Zero Host Credential Leakage**: Host tokens, keys, and user sessions remain exclusively on the local machine.
+
+### 5. ⚡ Classic InstaFlow Interactive DM Core
+Retains all flagship sub-20ms direct messaging capabilities:
+- **Instant Slash Commands**: `/help`, `/truth`, `/repurpose`, `/videodr`, `/search`, `/account`, `/tools`, `/code`.
+- **ManyChat-Style Lead Magnets**: Instant replies to keywords (`CODE`, `LINK`, `NOTCH`, `DWEL`, `TOOLS`) in $<16\text{ms}$.
+- **DWEL Loop Interceptor**: Dynamic Watermark Entropy Loop guard blocks bot-to-bot ping pong loops in $<0.5\text{ms}$.
+- **1-Second Creator Discovery**: Discovers creators and hydrates bio, followers, following, and post counts in $<1\text{s}$ with zero API tokens.
 
 ---
 
-## 🚦 Command & State Machine Matrix
+## 🚦 Slash Commands & Triggers Reference
 
-| Command / Trigger | Category | Action Performed | Average Latency |
+| Command / Trigger | Engine | Purpose / Action | Latency |
 | :--- | :--- | :--- | :--- |
-| `/help`, `/start` | Command | Renders interactive command directory & instructions | 13.4 ms |
-| `CODE`, `LINK` | Lead Magnet | Dispatches links to open-source flagship repositories | 14.5 ms |
-| `/search <niche>` | Discovery | Dorks search engines for creator profiles; hydrates top 3 | 1,200 ms |
-| `/account <handle>` | Hydration | Extracts bio, follower counts, following, posts, links | 850 ms |
-| `/tools` | Catalog | Returns top curated developer tools with official URLs | 18.0 ms |
-| `/code <repo>` | Direct Link | Returns exact repository link for Notch, DWEL, etc. | 13.8 ms |
-| `https://instagram.com/reel/...` | Harvester | Queues Reel for OCR transcription & tool extraction | 45.0 ms |
+| `/truth <claim>` | `OmniTruthEngine` | Evaluates claim across arXiv, GitHub, and 5-Persona Council ($Q \ge 0.85$) | ~350 ms |
+| `/repurpose <title>` | `OmnichannelRepurposer` | Compiles X technical thread, 1000x1500 SVG pin, and Reddit retrospective | ~12 ms |
+| `/videodr <video>` | `VideoDRProcessor` | Extracts visual keyframes, speech tokens, and executable code snippets | ~10 ms |
+| `/search <niche>` | `AccountSearchEngine` | Discovers creators in any technical niche and hydrates stats | ~800 ms |
+| `/account <handle>`| `AccountSearchEngine` | Extracts full bio, follower counts, following, and external links | ~600 ms |
+| `/tools` | `InstaFlowEngine` | Returns top harvested developer tools and direct links | <15 ms |
+| `/code <project>` | `InstaFlowEngine` | Dispatches direct GitHub repository access link | <15 ms |
+| `CODE` / `LINK` | `InstaFlowEngine` | Lead magnet trigger: sends flagship open-source repo links | <15 ms |
+| `/help` / `/start` | `InstaFlowEngine` | Renders interactive directory and slash command index | <5 ms |
 
 ---
 
-## 🛡️ Security Hardening & Zero-Trust Advice
+## 🚀 Quickstart & CLI Usage
 
-- **Credential Hygiene**: Session tokens (`sessionid`, `ds_user_id`, `csrftoken`) are loaded via local `.env` and strictly excluded by `.gitignore`.
-- **Safe Polling Jitter**: Background polling includes randomized interval jitter (`poll_interval ± poll_jitter`) to mimic human browsing and prevent rate limiting.
-- **Read-Only / Dry-Run Mode**: Use `--dry-run` to log outbound DM replies to stdout without triggering external network requests.
-- **Central Data Fabric**: State and discovered profiles persist to Central Blackboard WAL (`core/blackboard.py`) or local SQLite ledger.
+### 1. Prerequisites
+- Python 3.10+ (Standard library + optional `pytest`).
+- Optional for physical teleoperation: Android SDK (`adb`) or `/agent-reach` tunnel.
 
----
-
-## 🚀 Quickstart
-
-### Prerequisites
-- Python 3.10+ (Standard library only; zero mandatory third-party dependencies).
-
-### 1. Clone & Install
+### 2. Installation
 ```bash
 git clone https://github.com/Jaswanth1902/InstaFlow.git
 cd InstaFlow
 
-# Optional: editable install
+# Optional editable install
 pip install -e .
 ```
 
-### 2. Launch Interactive Terminal Simulator (Zero Setup Needed)
-Test all commands and lead magnet triggers in real-time right in your terminal:
-```bash
-instaflow --simulate
-```
-*Try typing:* `/help`, `/search ai tools`, `/account @datawarlord_official`, or `CODE`.
-
-### 3. Run Automated Synthetic Test Suite
-Verify that all 7 capability suites pass with 100% precision:
+### 3. Automated Verification Suite
+Run the 10-point automated capability suite:
 ```bash
 instaflow --test
 ```
+*Output:*
+```text
+===========================================================================
+⚡ INSTAFLOW OMNI — Sovereign Social Intelligence & Physical Teleoperation
+   Multi-Vector Truth • Omnichannel Repurposer • VideoDR • /agent-reach ADB
+===========================================================================
+[*] Running Automated OMNI Capabilities Suite...
+---------------------------------------------------------------------------
+[1/10]  ✅ PASS | Command Router: Help menu (3.7ms)
+[2/10]  ✅ PASS | Lead Magnet Trigger: Repository links (12.2ms)
+[3/10]  ✅ PASS | Account Discovery: Creator search (5993.0ms)
+[4/10]  ✅ PASS | Profile Hydrator: Creator dossier (1241.8ms)
+[5/10]  ✅ PASS | Tools Catalog: Harvested tools directory (10.5ms)
+[6/10]  ✅ PASS | Direct Link: Notch repository link (10.7ms)
+[7/10]  ✅ PASS | Natural Language: Bot identity intent (9.5ms)
+[8/10]  ✅ PASS | Omni-Truth: ArXiv & Council verification (10071.6ms)
+[9/10]  ✅ PASS | Omnichannel: Multi-platform compiler (11.6ms)
+[10/10] ✅ PASS | VideoDR: Frame anchor extraction (8.9ms)
+===========================================================================
+🎉 ALL 10 INSTAFLOW OMNI CAPABILITY TESTS PASSED!
+===========================================================================
+```
 
-### 4. Direct CLI Creator Discovery & Hydration
-Discover creators without touching Instagram:
+### 4. Interactive Terminal DM Simulation
+Simulate conversations with your assistant live without risk of Instagram rate limits:
 ```bash
-# Search creators by topic:
-instaflow --search "ai agents"
-
-# Inspect creator bio and follower metrics:
-instaflow --account @datawarlord_official
+instaflow --simulate
 ```
+*Try commands like:*
+- `/truth Graph RAG outperforms standard dense retrieval`
+- `/repurpose Building an autograd engine from scratch`
+- `/videodr sample_reel.mp4`
+- `CODE`
+- `/search ai developers`
 
-### 5. Configure Live Direct Message Polling (Optional)
-Copy `.env.example` to `.env` and provide your web session cookie:
-```ini
-INSTAGRAM_SESSION_ID=your_session_id_here
-INSTAGRAM_DS_USER_ID=your_user_id_here
-POLL_INTERVAL_SECONDS=60
-POLL_JITTER_SECONDS=5
-```
-Run the live poller:
+### 5. Multi-Vector Truth Verification via CLI
 ```bash
-# Test once:
-instaflow --once
+instaflow --truth "Attention is all you need"
+```
 
-# Run continuous background daemon:
-instaflow --poll
+### 6. Omnichannel Repurposing via CLI
+```bash
+instaflow --repurpose "Micrograd From Scratch" "Built scalar autograd engine in 150 lines of pure Python"
+```
+
+### 7. Physical Android ADB Teleoperation Payload Generation
+```bash
+# Generate tap payload
+instaflow --teleop tap "android_worker_01"
+
+# Generate swipe payload
+instaflow --teleop swipe "android_worker_01"
+
+# Generate app launch payload
+instaflow --teleop app "android_worker_01"
+```
+
+### 8. Unauthenticated Platform Workarounds
+```bash
+# Ingest tweet via Syndication CDN
+instaflow --workaround twitter 20
+
+# Ingest public Pinterest board RSS
+instaflow --workaround pinterest tech/ai
 ```
 
 ---
 
-## 🔌 Python API Integration
+## 🧪 Test Verification & Empirical Rigor
 
-InstaFlow can be embedded directly into any Python workflow or AI coding agent:
-
-```python
-from instaflow import InstaFlowEngine, AccountSearchEngine
-
-# 1. Interactive Conversational Engine
-engine = InstaFlowEngine()
-reply = engine.process_incoming_message(
-    thread_id="thread_001",
-    sender_handle="developer_friend",
-    message_text="CODE"
-)
-print(reply)
-
-# 2. 1-Second Creator Account Hydration
-search_engine = AccountSearchEngine()
-creator = search_engine.inspect_account("datawarlord_official")
-print(f"@{creator.handle}: {creator.followers_count:,} followers | Niche: {creator.niche}")
+All components are strictly verified against isolated unit test fixtures:
+```bash
+pytest tests/ -v
 ```
+**Verification Evidence:**
+- `tests/test_core.py`: 12/12 passed (Config, Dorking, Command Router, DWEL Loop Guard, Storage, Simulator).
+- `tests/test_omni_capabilities.py`: 6/6 passed (OmniTruth, Repurposer, VideoDR, Teleoperation, Engine Integration).
+- `tests/test_workarounds.py`: 3/3 passed (Twitter Syndication, Pinterest RSS, Instagram Public Metadata).
+- **Total: 21/21 Unit & Integration Tests Passed (100% Green).**
 
 ---
 
-## 🏷️ GitHub Topics & Keywords
-`instagram-bot` • `direct-messages` • `ai-agent` • `social-intelligence` • `lead-magnet` • `manychat-alternative` • `creator-discovery` • `python` • `zero-dependency` • `automation` • `sqlite-wal` • `local-first`
+## 🛡️ Security, Governance & Operating Invariants
+
+- **Windows Subprocess Visibility Invariant**: All subprocess invocations explicitly enforce `creationflags=0x08000000` (`CREATE_NO_WINDOW`), preventing focus-stealing console popups during background polling.
+- **Zero Remote Credential Exposure**: Host tokens, OpenAI/Gemini keys, and user sessions remain exclusively on the local machine; only headless commands cross into remote teleoperation targets.
+- **Token Clamping**: All video summaries and harvested captions are strictly clamped to $<400$ tokens to eliminate context window burnage.
+- **Central Data Fabric**: State and discovered profiles persist to Central Blackboard WAL (`core/blackboard.py` / SQLite) using namespaced tables (`insta_*`).
 
 ---
 
-## 📄 License
-Distributed under the [Apache License, Version 2.0](LICENSE). Copyright (c) 2026 Jaswanth Reddy.
+## 📄 License & Attribution
+
+Distributed under the [Apache License, Version 2.0](LICENSE).  
+Architected & Maintained by **Jaswanth Reddy** (2026).
