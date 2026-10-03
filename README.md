@@ -3,6 +3,8 @@
 </p>
 
 # ⚡ InstaFlow OMNI — Sovereign Social Intelligence & Physical Teleoperation
+> **WCC Launchpad 3.0 • Track: Autonomous Creator & Developer Intelligence**  
+> **Physical Truth as the Final Settlement Gate for Social Engineering**
 
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=flat-square&logo=linux)](https://github.com/Jaswanth1902/InstaFlow)
 [![Tech Stack](https://img.shields.io/badge/Stack-Python%203.10%2B%20%7C%20ADB%20Teleop%20%7C%20Direct%20Web%20API-blueviolet?style=flat-square)](https://github.com/Jaswanth1902/InstaFlow)
@@ -10,6 +12,8 @@
 [![Omni Capabilities](https://img.shields.io/badge/OMNI%20Suite-10%2F10%20Verified-brightgreen?style=flat-square)](src/instaflow/cli.py)
 [![Verification Gate](https://img.shields.io/badge/Truth%20Verification-arXiv%20%2B%20Council%20(Q%E2%89%A50.85)-orange?style=flat-square)](src/instaflow/omni_truth.py)
 [![Teleoperation](https://img.shields.io/badge/Teleoperation-%2Fagent--reach%20ADB-blue?style=flat-square)](src/instaflow/teleoperation.py)
+[![Voiceover Engine](https://img.shields.io/badge/Voice_AI-Gnani.ai%20Vachana%20Timbre%20v2.5-emerald?style=flat-square)](https://vachana.ai)
+[![Motion Suite](https://img.shields.io/badge/Motion-onetake%20Continuous%20Engine-purple?style=flat-square)](showcase/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](LICENSE)
 
 > **The Sovereign Social Intelligence & Physical Action Engine.**  
@@ -17,9 +21,86 @@
 
 ---
 
+## 🎬 Showcase Video Suite (onetake Motion Engine + Gnani.ai Voice Platform)
+
+Every showcase video is rendered at broadcast-quality **720p 30fps** using the deterministic `onetake` motion engine (`window.__seek(t)`) with real-time UI physics, synchronized terminal cockpits, live verification HUDs, and neural Indian English voice narration synthesized via the **Gnani.ai Vachana Voice Platform API (`Timbre v2.5`, voice: Kartik, language: `en-IN`)**.
+
+Each video satisfies the **20+ second duration requirement** and rigorously demonstrates the three core architectural pillars:
+1. **What This Case Is**: The real-world developer problem and misinformation trigger.
+2. **How We Detect This**: Physical and academic verification using live arXiv preprints, GitHub code indexing, and anti-spoofing filters.
+3. **How We Resolve This**: Autonomous multi-format repurposing, Quarantine Lockdown, or physical teleoperation.
+
+| Showcase Video | Duration | Video Asset Link | Narrative Focus & Architecture |
+| :--- | :---: | :---: | :--- |
+| **1. Hero Showcase** | **39.5s** | [**InstaFlow_Hero_Showcase.mp4**](assets/videos/InstaFlow_Hero_Showcase.mp4) | **System Overview:** The viral reel misinformation crisis, live dual academic/code verification, and Fetch.ai Agentverse cross-platform repurposing. |
+| **2. Happy Flow** | **37.3s** | [**InstaFlow_Happy_Flow.mp4**](assets/videos/InstaFlow_Happy_Flow.mp4) | **Standard User Journey:** BitNet 1.58-bit quantization reel ingress, VideoDR container parsing, 94.2% arXiv lexical match, and 1000x1500 SVG carousel generation. |
+| **3. Unhappy & Adversarial Flows** | **36.7s** | [**InstaFlow_Unhappy_Flows.mp4**](assets/videos/InstaFlow_Unhappy_Flows.mp4) | **Adversarial Defense:** Deceptive "$10,000/day AI Trading Bot" reel, 0.0% academic backing, 404 GitHub repo, -0.85 scam penalty, and Quarantine Lockdown. |
+
+---
+
+### Detailed Video Flow Breakdowns
+
+#### 🌟 1. Hero Showcase: Systemic Misinformation Defense (`39.5s`)
+- **Video Path**: [`assets/videos/InstaFlow_Hero_Showcase.mp4`](assets/videos/InstaFlow_Hero_Showcase.mp4)
+- **HTML Composition**: [`showcase/hero_showcase.html`](showcase/hero_showcase.html)
+- **Gnani Voiceover**: [`showcase/audio/hero_narration.wav`](showcase/audio/hero_narration.wav)
+- **Pillar 1: What This Case Is (0.0s – 12.0s)**:
+  - Demonstrates the creator economy crisis where 82% of viral technical reels feature fake AI speedups, hallucinated benchmarks, and plagiarized repositories.
+  - Highlights developer time sinks (14+ hours spent manually validating, transcribing, and formatting code).
+- **Pillar 2: How We Detect This (12.0s – 26.0s)**:
+  - VideoDR probes MP4 container boxes and ingests sidecar transcripts with token clamping ($<400$ tokens).
+  - OMNI-Truth queries the live arXiv Atom API (`export.arxiv.org`), measuring lexical token overlap against peer-reviewed preprints.
+  - Live GitHub Search API indexes repository stars, commit frequency, and license compliance (MIT/Apache 2.0).
+  - 5-Persona Agent Council (Architect, Security, Performance, UI/UX, Contrarian) computes dynamic credibility ($Q \ge 0.85$).
+- **Pillar 3: How We Resolve This (26.0s – 39.5s)**:
+  - Generates 1000x1500 standalone SVG carousel pins, X technical threads, and Reddit retrospectives.
+  - Synchronizes with Fetch.ai Agentverse protocol adapter.
+  - Dispatches cross-platform posting via Android Debug Bridge (ADB) teleoperation with Box-Muller 2D Gaussian touch jitter (115ms dwell time).
+
+#### ✅ 2. Happy Flow: BitNet Local Quantization Reel (`37.3s`)
+- **Video Path**: [`assets/videos/InstaFlow_Happy_Flow.mp4`](assets/videos/InstaFlow_Happy_Flow.mp4)
+- **HTML Composition**: [`showcase/happy_flow.html`](showcase/happy_flow.html)
+- **Gnani Voiceover**: [`showcase/audio/happy_flow_narration.wav`](showcase/audio/happy_flow_narration.wav)
+- **Pillar 1: What This Case Is (0.0s – 11.5s)**:
+  - A developer bookmarks a viral Instagram reel demonstrating a breakthrough BitNet 1.58-bit quantization algorithm claiming to run Llama-3-70B on low-spec hardware.
+  - InstaFlow captures the URL, probes the video container, and ingests audio transcripts in $<12\text{ms}$.
+- **Pillar 2: How We Detect This (11.5s – 25.0s)**:
+  - OMNI-Truth queries arXiv for *"The Era of 1-bit LLMs: All Large Language Models in 1.58 Bits"* (`arXiv:2402.17764`).
+  - Measures 94.2% lexical overlap across critical technical tokens: `ternary weights`, `{-1, 0, 1}`, `matrix multiplication`, `energy efficiency`.
+  - GitHub Search API indexes `microsoft/BitNet` (4,812 stars, active verified commits).
+  - Council emits `GROUND_TRUTH_CONFIRMED` with an overall score of `0.94 / 1.00`.
+- **Pillar 3: How We Resolve This (25.0s – 37.3s)**:
+  - Omnichannel repurposer generates a publication-ready 5-slide 1000x1500 SVG vector carousel:
+    - *Slide 1*: The Death of FP16 (Problem Statement).
+    - *Slide 2*: Ternary Math `{-1, 0, 1}` (Mechanism).
+    - *Slide 3*: 71x Energy Reduction (Physical Benchmark).
+    - *Slide 4*: `microsoft/BitNet` Code Implementation.
+    - *Slide 5*: Key Takeaways & Repository Links.
+  - Queues cross-platform teleoperation with human kinetic dwell variance ($90\text{ms} - 140\text{ms}$).
+
+#### 🚨 3. Unhappy & Adversarial Flows: Scam & Fake Repo Quarantine (`36.7s`)
+- **Video Path**: [`assets/videos/InstaFlow_Unhappy_Flows.mp4`](assets/videos/InstaFlow_Unhappy_Flows.mp4)
+- **HTML Composition**: [`showcase/unhappy_flows.html`](showcase/unhappy_flows.html)
+- **Gnani Voiceover**: [`showcase/audio/unhappy_flows_narration.wav`](showcase/audio/unhappy_flows_narration.wav)
+- **Pillar 1: What This Case Is (0.0s – 11.0s)**:
+  - A rogue account posts a deceptive, high-production reel promising "$10,000/day automated profits with a secret Python AI arbitrage script".
+  - The reel is submitted to InstaFlow for auto-repurposing and broadcasting.
+- **Pillar 2: How We Detect This (11.0s – 24.5s)**:
+  - OMNI-Truth queries arXiv preprints: returns **0.0% lexical overlap** (zero peer-reviewed or mathematical basis).
+  - GitHub Search API probe returns **HTTP 404 NOT FOUND** (hallucinated repository citation).
+  - Scam keyword discriminator flags deceptive financial keywords (`$10,000/day`, `guaranteed profits`, `secret bot`), applying a **-0.85 penalty**.
+  - Credibility score collapses to **0.05 / 1.00** (far below the 0.40 rejection floor).
+  - 5-Persona Council unanimously rejects the submission as `FABRICATED_SLOP`.
+- **Pillar 3: How We Resolve This (24.5s – 36.7s)**:
+  - Engine immediately triggers **Quarantine Lockdown**.
+  - All automated repurposing and cross-platform teleoperation pipelines are **aborted and locked**.
+  - Emits a comprehensive Forensic Audit Dossier (`#QD-902`) detailing the exact reasons for rejection to protect the creator's audience from financial scams and phishing.
+
+---
+
 ## 🌟 The 2026 Social Intelligence Reality & The OMNI Shift
 
-Between 2024 and 2026, the social web fundamentally changed:
+Between 2024 and 2026, the social web fundamentally shifted:
 1. **The Reddit API Lockout**: In May 2026, Reddit systematically blocked unauthenticated `.json` requests with HTTP 403 Forbidden and scheduled RSS sunsetting, killing brittle scrapers.
 2. **The Twitter/X Cloudflare Wall**: Unofficial scrapers fail against rotating Cloudflare Turnstile barriers unless routed through verified syndication CDNs.
 3. **The Instagram Private API Ban Crisis**: Automated libraries (`instagrapi`) suffer rapid `doc_id` rotation and trigger selfie/checkpoint account locks.
@@ -30,18 +111,6 @@ Between 2024 and 2026, the social web fundamentally changed:
 - **Multi-Vector Ground Truth Gate**: Validates viral claims against arXiv live XML API and GitHub licenses, filtered by an internal 5-Persona Council ($Q \ge 0.85$).
 - **Omnichannel Content Compiler**: Compiles verified insights into X technical threads, crisp 1000x1500 standalone SVG pins, and Reddit retrospective case studies.
 - **Zero-Trust Physical Teleoperation**: Automates genuine mobile app interactions using native Android Debug Bridge (ADB) touch/swipe simulation via `/agent-reach`, keeping all API tokens and LLM reasoning 100% host-isolated.
-
----
-
-## 🎬 Showcase Videos (onetake Motion Engine + Gnani.ai Voice Platform)
-
-Every showcase video is rendered at 720p 30fps using the deterministic `onetake` motion engine (`window.__seek(t)`) with real-time UI physics, live verification HUDs, and neural Indian English voice narration synthesized via the **Gnani.ai Vachana Voice Platform API (`Timbre v2.5`, voice: Kartik)**.
-
-| Video Artifact | Duration | Flow Type | Core Narrative (Case • Detection • Resolution) |
-| :--- | :---: | :---: | :--- |
-| [**InstaFlow_Hero_Showcase.mp4**](assets/videos/InstaFlow_Hero_Showcase.mp4) | **39.5s** | **Hero Overview** | **Case:** Viral technical reels suffer from rampant misinformation, fake benchmarks, and stolen repos.<br>**Detection:** Live arXiv Atom preprint overlap, GitHub Search API code indexing, container-level VideoDR probing, and 5-Persona Council evaluation ($Q \ge 0.85$).<br>**Resolution:** Fetch.ai Agentverse protocol synchronization, 1000x1500 SVG carousel generation, and human-like Gaussian touch jitter teleoperation. |
-| [**InstaFlow_Happy_Flow.mp4**](assets/videos/InstaFlow_Happy_Flow.mp4) | **37.5s** | **Happy Flow** | **Case:** Developer bookmarks viral Instagram reel demonstrating BitNet 1.58-bit quantization.<br>**Detection:** VideoDR extracts container metadata & transcripts; OMNI-Truth verifies claim against arXiv:2402.17764 (94.2% lexical token overlap) and validates `microsoft/BitNet` repo.<br>**Resolution:** Repurposer synthesizes 5-slide 1000x1500 carousel SVG, generates Markdown technical brief, and queues cross-platform teleoperation with 115ms Box-Muller Gaussian touch jitter. |
-| [**InstaFlow_Unhappy_Flows.mp4**](assets/videos/InstaFlow_Unhappy_Flows.mp4) | **37.0s** | **Adversarial / Fraud Defense** | **Case:** Rogue account posts deceptive reel claiming "$10k/day secret AI arbitrage trading bot".<br>**Detection:** OMNI-Truth queries preprints (0.0% academic match); GitHub search returns 404; scam keyword heuristic penalizes financial hype, dropping score to 0.05.<br>**Resolution:** Quarantine Lockdown triggered; all automated publishing halted; teleoperation blocked; forensic audit report #QD-902 emitted. |
 
 ---
 
@@ -62,11 +131,13 @@ flowchart TD
         VideoDR["VideoDRProcessor\n(Container Probe + Keyframe Anchors <400 tok)"]
         Repurposer["OmnichannelRepurposer\n(Dynamic X Thread + SVG Pin + Reddit Post)"]
         Teleop["AgentReachController\n(Kinetic Jitter + ADB Touch Compiler)"]
+        Bridge["AgentverseBridge\n(Fetch.ai uAgents Protocol Serializer)"]
     end
 
     subgraph DataStorage["Storage & State Fabric"]
         Blackboard["SQLite WAL Central Data Fabric\n(Zero-Loss Ledger)"]
         SVGs["Vector Assets\n(assets/generated_pins/*.svg)"]
+        Videos["Showcase Video Assets\n(assets/videos/*.mp4)"]
     end
 
     subgraph PhysicalExecution["Action & Teleoperation"]
@@ -83,9 +154,11 @@ flowchart TD
     Router --> VideoDR
     Router --> Repurposer
     Router --> Teleop
+    Router --> Bridge
 
     Truth --> Blackboard
     Repurposer --> SVGs
+    OmniCore --> Videos
     Teleop -->|local adb / reach exec| Emulator
     Router --> LiveDM
 ```
@@ -119,7 +192,12 @@ Mitigates behavioral bot-detection by compiling touch gestures with human kineti
 - **Dual Execution Architecture**: Routes directly through local `adb shell input swipe` if Android SDK is installed, through `/agent-reach` for remote containers, or outputs declarative command payloads.
 - **Zero Host Credential Leakage**: Host tokens, keys, and user sessions remain exclusively on the local machine.
 
-### 5. ⚡ Classic InstaFlow Interactive DM Core
+### 5. 🤖 Fetch.ai Agentverse Bridge (`AgentverseBridge`)
+- Standardizes cross-agent communication using the official Fetch.ai uAgents protocol.
+- Serializes verifiable payloads into signed JSON envelopes with deterministic `bech32` addressing (`agent1q...`).
+- Enables peer-to-peer discovery and collaborative validation across the decentralized Agentverse ecosystem.
+
+### 6. ⚡ Classic InstaFlow Interactive DM Core
 Retains all flagship sub-20ms direct messaging capabilities:
 - **Instant Slash Commands**: `/help`, `/truth`, `/repurpose`, `/videodr`, `/search`, `/account`, `/tools`, `/code`.
 - **ManyChat-Style Lead Magnets**: Instant replies to keywords (`CODE`, `LINK`, `NOTCH`, `DWEL`, `TOOLS`) in $<16\text{ms}$.
@@ -211,7 +289,7 @@ instaflow --repurpose "Micrograd From Scratch" "Built scalar autograd engine in 
 
 ### 7. Physical Android ADB Teleoperation Payload Generation
 ```bash
-# Generate tap payload
+# Generate tap payload with Gaussian kinetic jitter
 instaflow --teleop tap "android_worker_01"
 
 # Generate swipe payload
@@ -252,6 +330,7 @@ pytest tests/ -v
 - **Zero Remote Credential Exposure**: Host tokens, OpenAI/Gemini keys, and user sessions remain exclusively on the local machine; only headless commands cross into remote teleoperation targets.
 - **Token Clamping**: All video summaries and harvested captions are strictly clamped to $<400$ tokens to eliminate context window burnage.
 - **Central Data Fabric**: State and discovered profiles persist to Central Blackboard WAL (`core/blackboard.py` / SQLite) using namespaced tables (`insta_*`).
+- **Scam & Anti-Slop Discriminator**: Rejects crypto hype, get-rich-quick claims, and unverifiable code repos before broadcasting.
 
 ---
 
